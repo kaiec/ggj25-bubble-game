@@ -26,7 +26,7 @@ func _ready() -> void:
 	DebugGlobal.debug_label = $SubViewportContainer/MenuLayer/DebugLabel
 	for i in range(max_level): 
 		completed_levels.append(false)
-	# Load settings
+	# Load settingsz
 	Settings.load_config()
 	
 	if OS.get_name() == "Web":
