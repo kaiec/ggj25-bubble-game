@@ -35,14 +35,8 @@ func _input(event: InputEvent) -> void:
 
 func set_is_in_game(b: bool) -> void:
 	_is_in_game = b
-	_update_mouse_capture()
 
-func _update_mouse_capture() -> void:
-	if (not _is_in_game) || _is_paused:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 
 func set_is_paused(b: bool) -> void:
 	_is_paused = b
-	_update_mouse_capture()

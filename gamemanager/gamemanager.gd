@@ -72,7 +72,7 @@ func _show_main_level() -> void:
 	current_level_node = next_level
 
 func _next_level() -> void:
-	if level <= max_level and max_level > 0:
+	if level < max_level and max_level > 0:
 		InputManager.set_is_in_game(true)
 		level += 1
 		_show_level(level)
@@ -84,7 +84,7 @@ func _next_level() -> void:
 func _show_level(level_nr: int) -> void:
 	InputManager.set_is_in_game(true)
 	level = level_nr
-	var next_level = load(level_location % str(level))
+	var next_level = load(level_location % str(level)).instantiate()
 	if next_level.has_signal("win"):
 		next_level.win.connect(_next_level)
 	if next_level.has_signal("reset"):
