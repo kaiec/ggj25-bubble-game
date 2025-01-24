@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx0wgckga1wfc"]
+[gd_scene load_steps=8 format=3 uid="uid://cx0wgckga1wfc"]
 
 [ext_resource type="Script" path="res://bubble/bubble_engine.gd" id="1_0hk77"]
 [ext_resource type="Script" path="res://bubble/select_cell.gd" id="2_bepp4"]
-[ext_resource type="Texture2D" uid="uid://dkgp7tccxyyxc" path="res://icon.svg" id="3_o0pgs"]
+[ext_resource type="Texture2D" uid="uid://qabhfojj8r3x" path="res://bubble/assets/tiles.png" id="3_eeh7o"]
+[ext_resource type="Script" path="res://bubble/check_burst.gd" id="3_stktg"]
+[ext_resource type="Script" path="res://bubble/burst.gd" id="4_147cl"]
+[ext_resource type="Script" path="res://bubble/check_win.gd" id="5_xkthi"]
+[ext_resource type="Script" path="res://bubble/finish.gd" id="6_ucinb"]
 
 [node name="BubbleEngine" type="Node2D"]
 script = ExtResource("1_0hk77")
@@ -12,6 +16,22 @@ script = ExtResource("1_0hk77")
 [node name="SelectCell" type="Node" parent="States"]
 script = ExtResource("2_bepp4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_o0pgs")
+[node name="CheckBurst" type="Node" parent="States"]
+script = ExtResource("3_stktg")
+
+[node name="Burst" type="Node" parent="States"]
+script = ExtResource("4_147cl")
+
+[node name="CheckWin" type="Node" parent="States"]
+script = ExtResource("5_xkthi")
+
+[node name="Finish" type="Node" parent="States"]
+script = ExtResource("6_ucinb")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+modulate = Color(0.28, 1, 0.376, 1)
+texture = ExtResource("3_eeh7o")
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="Bubbles" type="Node2D" parent="."]
