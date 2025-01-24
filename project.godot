@@ -21,6 +21,7 @@ InputManager="*res://autoloads/input_manager.gd"
 DebugGlobal="*res://autoloads/debug_global.gd"
 Global="*res://autoloads/global.gd"
 Settings="*res://autoloads/settings/settings.gd"
+Co="*res://autoloads/coroutines.gd"
 
 [input]
 

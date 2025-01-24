@@ -12,7 +12,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAA
 tile_set = ExtResource("2_1qs66")
 
 [node name="Setup" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAGAAMAAAADAAAAAAAIAAMAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAGAAMAAAADAAAAAAAIAAMAAAADAAAAAAAFAAIAAAACAAAAAAA=")
 tile_set = ExtResource("2_1qs66")
 
 [node name="Button" type="Button" parent="."]
