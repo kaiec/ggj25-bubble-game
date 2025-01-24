@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgu0vbr50x7di"]
+
+[ext_resource type="Script" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
+[ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
+[ext_resource type="Environment" uid="uid://bhb4ckqipjvu3" path="res://other/main_environment.tres" id="2_v1n10"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w0vat"]
+blend_mode = 4
+
+[node name="Gamemanager" type="Node"]
+process_mode = 3
+script = ExtResource("1_htktm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_v1n10")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("CanvasItemMaterial_w0vat")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8qpx4")
+stretch = true
+
+[node name="MenuLayer" type="SubViewport" parent="SubViewportContainer"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="DebugLabel" type="Label" parent="SubViewportContainer/MenuLayer"]
+visible = false
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 600.0
+offset_bottom = 308.0
+
+[node name="PauseMenu" parent="SubViewportContainer/MenuLayer" instance=ExtResource("2_b2lg8")]
+visible = false
+theme = null
