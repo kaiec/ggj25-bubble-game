@@ -8,10 +8,13 @@ extends Node2D
 
 @export var size: int = 1:
 	set(value):
+		var old_value = size
 		print("Size changed ", size, " -> ", value, " (", self, ")")
 		size = value
 		if sprite:
 			sprite.region_rect.position.x = (size-1)*32
+			if value > old_value and is_inside_tree():
+				play_inflate_sound()
 
 var bursting := false
 var anim_offset := 0.0
@@ -52,6 +55,7 @@ func spawn_animation():
 	if Engine.is_editor_hint(): return
 	
 	print("Spawn animation start: ", self)
+	play_inflate_sound()
 	scale = Vector2(0,0)
 	show()
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
@@ -75,14 +79,27 @@ func burst():
 
 func play_pop_sound() -> AudioStreamPlayer:
 	var player : AudioStreamPlayer = $PopSounds.get_children().pick_random() as AudioStreamPlayer
+	if is_in_group("goal"):
+		print("Goal Pop!")
+		player.pitch_scale = 0.5
+		player.volume_db = 6				
+	else:
+		player.pitch_scale = randf_range(0.8, 1.2)
 	get_tree().create_timer(randf_range(0.01, 0.05)).timeout.connect(
 		func():
-			if is_in_group("goal"):
-				player.pitch_scale = 0.1				
-			else:
-				player.play()
+			player.play()
 	)
 	return player
+
+func play_inflate_sound() -> AudioStreamPlayer:
+	var player : AudioStreamPlayer = $SFX/Bubble1 as AudioStreamPlayer
+	player.pitch_scale = randf_range(0.8, 1.2)
+	get_tree().create_timer(randf_range(0.01, 0.3)).timeout.connect(
+		func():
+			player.play()
+	)
+	return player
+
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint(): return
