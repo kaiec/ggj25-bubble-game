@@ -31,6 +31,7 @@ func burst():
 		var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)
 		if new_bubble:
 			new_bubble.direction = direction
+			new_bubble.modulate = modulate
 		await new_bubble.spawn_animation
 	hide()
 

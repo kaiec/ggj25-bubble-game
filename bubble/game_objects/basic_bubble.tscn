@@ -21,30 +21,6 @@ texture = ExtResource("2_5bted")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="LeftProjectile" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_5bted")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="RightProjectile" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_5bted")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="UpProjectile" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_5bted")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="DownProjectile" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_5bted")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
 [node name="PopSounds" type="Node" parent="."]
 
 [node name="Pop1" type="AudioStreamPlayer" parent="PopSounds"]

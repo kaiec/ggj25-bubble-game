@@ -1,10 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjt4tsttw2c5r"]
+[gd_scene load_steps=4 format=3 uid="uid://cjt4tsttw2c5r"]
 
 [ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="1_81tts"]
 [ext_resource type="Script" path="res://bubble/bubble.gd" id="2_ovfnn"]
+[ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="3_m71h7"]
 
 [node name="Bubble" instance=ExtResource("1_81tts")]
+modulate = Color(0.247059, 0.470588, 0.682353, 1)
 script = ExtResource("2_ovfnn")
 
-[node name="Sprite" parent="." index="0"]
-modulate = Color(0.245195, 0.469301, 0.681353, 1)
+[node name="LeftProjectile" type="Sprite2D" parent="." index="1"]
+visible = false
+texture = ExtResource("3_m71h7")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="RightProjectile" type="Sprite2D" parent="." index="2"]
+visible = false
+texture = ExtResource("3_m71h7")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="UpProjectile" type="Sprite2D" parent="." index="3"]
+visible = false
+texture = ExtResource("3_m71h7")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="DownProjectile" type="Sprite2D" parent="." index="4"]
+visible = false
+texture = ExtResource("3_m71h7")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
