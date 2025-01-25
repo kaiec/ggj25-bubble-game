@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgu0vbr50x7di"]
+[gd_scene load_steps=8 format=3 uid="uid://cgu0vbr50x7di"]
 
 [ext_resource type="Script" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
 [ext_resource type="Environment" uid="uid://bhb4ckqipjvu3" path="res://other/main_environment.tres" id="2_v1n10"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
+[ext_resource type="AudioStream" uid="uid://d26781t8hwomq" path="res://bubble/assets/music/forest.ogg" id="5_dn5ay"]
+[ext_resource type="AudioStream" uid="uid://bvdbvkguf1igw" path="res://bubble/assets/music/water.ogg" id="6_5vf21"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w0vat"]
 blend_mode = 4
@@ -45,6 +47,17 @@ offset_bottom = 308.0
 [node name="PauseMenu" parent="SubViewportContainer/MenuLayer" instance=ExtResource("2_b2lg8")]
 visible = false
 theme = null
+
+[node name="Forest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dn5ay")
+autoplay = true
+bus = &"Music"
+
+[node name="Water" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5vf21")
+volume_db = -7.475
+autoplay = true
+bus = &"Music"
 
 [connection signal="continue_btn_pressed" from="SubViewportContainer/MenuLayer/PauseMenu" to="." method="resume"]
 [connection signal="exit_game_btn_pressed" from="SubViewportContainer/MenuLayer/PauseMenu" to="." method="_quit_game"]
