@@ -1,6 +1,27 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://hheneshfv1b2"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://hheneshfv1b2"]
 
 [ext_resource type="Texture2D" uid="uid://b23e4kqj4o6dv" path="res://textures/Revert.svg" id="1_r1020"]
+[ext_resource type="FontFile" uid="uid://cbt6png2tnpyv" path="res://bubble/assets/fonts/PressStart2P-Regular.ttf" id="2_xpvrg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu70a"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oblf"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.19, 0.19, 0.19, 1)
 
 [resource]
+default_font = ExtResource("2_xpvrg")
+MarginContainer/constants/margin_bottom = 8
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 8
 RevertButton/icons/icon = ExtResource("1_r1020")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_wu70a")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_7oblf")

@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://fd3xmnc047tm"]
+[gd_scene load_steps=8 format=3 uid="uid://fd3xmnc047tm"]
 
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_agyyo"]
 [ext_resource type="Script" path="res://ui/screens/credit-screen/credit_screen.gd" id="1_h6a2t"]
+[ext_resource type="FontFile" uid="uid://cbt6png2tnpyv" path="res://bubble/assets/fonts/PressStart2P-Regular.ttf" id="3_osuxe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mon07"]
+font = ExtResource("3_osuxe")
 font_size = 80
 
 [sub_resource type="LabelSettings" id="LabelSettings_cutkl"]
-font_size = 22
+font = ExtResource("3_osuxe")
+font_size = 18
 
 [sub_resource type="LabelSettings" id="LabelSettings_2puqi"]
+font = ExtResource("3_osuxe")
 font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_r8dx7"]
@@ -18,12 +23,14 @@ font_size = 12
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 31.0
+offset_right = 104.0
+offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+scale = Vector2(0.843074, 0.843074)
+theme = ExtResource("1_agyyo")
 script = ExtResource("1_h6a2t")
 credits = "res://ui/screens/credit-screen/credits.json"
 
@@ -56,13 +63,12 @@ layout_mode = 2
 
 [node name="LabelCreatedBy" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Created by You"
+text = "Created by kaiec, [Tyr|x], mjod"
 label_settings = SubResource("LabelSettings_cutkl")
 horizontal_alignment = 1
 
 [node name="LabelSpecialThanks" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Special thanks to Also You"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -92,10 +98,11 @@ label_settings = SubResource("LabelSettings_r8dx7")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_agyyo")
 text = "Return to Main Menu
 "
 
-[node name="DetailedGCredits" type="Button" parent="."]
+[node name="DetailedGCredits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -104,4 +111,4 @@ text = "Show detailed Godot Credits"
 flat = true
 
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]
-[connection signal="pressed" from="DetailedGCredits" to="." method="_on_detailed_g_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/DetailedGCredits" to="." method="_on_detailed_g_credits_pressed"]
