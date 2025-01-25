@@ -71,6 +71,7 @@ func burst():
 	
 	if bursting:
 		return
+	var player = play_pop_sound()
 	bursting = true
 	remove_from_group("goal")
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
@@ -79,8 +80,20 @@ func burst():
 	for proj in projectiles:
 		proj.show()
 		tween.tween_property(proj, "position", proj.position + projectiles[proj], animation_time)
-	await tween.finished
+	tween.tween_property(self, "modulate:a", 0.5, 0.3)
+	await Co.await_all([tween.finished, player.finished])
 	hide()
+
+func play_pop_sound() -> AudioStreamPlayer:
+	var player : AudioStreamPlayer = $PopSounds.get_children().pick_random() as AudioStreamPlayer
+	get_tree().create_timer(randf_range(0.01, 0.05)).timeout.connect(
+		func():
+			if is_in_group("goal"):
+				player.pitch_scale = 0.1				
+			else:
+				player.play()
+	)
+	return player
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint(): return

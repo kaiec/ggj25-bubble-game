@@ -15,6 +15,7 @@ func _ready() -> void:
 		queue_free()
 	)
 	for bubble in $Bubbles.get_children():
+		
 		bubble.cell = $Area.local_to_map(bubble.position)
 
 

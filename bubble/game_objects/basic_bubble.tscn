@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbm74kal33eq3"]
+[gd_scene load_steps=13 format=3 uid="uid://cbm74kal33eq3"]
 
 [ext_resource type="Script" path="res://bubble/basic_bubble.gd" id="1_fownq"]
 [ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="2_5bted"]
+[ext_resource type="AudioStream" uid="uid://b3h1gg1kppe3v" path="res://bubble/assets/pop-sounds/pop1.ogg" id="3_ksbib"]
+[ext_resource type="AudioStream" uid="uid://d3587gte4njoj" path="res://bubble/assets/pop-sounds/pop2.ogg" id="4_6cu8p"]
+[ext_resource type="AudioStream" uid="uid://d3n1yrdi2fuoi" path="res://bubble/assets/pop-sounds/pop3.ogg" id="5_jumsv"]
+[ext_resource type="AudioStream" uid="uid://q42snmom38lr" path="res://bubble/assets/pop-sounds/pop4.ogg" id="6_gqjb4"]
+[ext_resource type="AudioStream" uid="uid://3njn6s3lr2yg" path="res://bubble/assets/pop-sounds/pop5.ogg" id="7_npqph"]
+[ext_resource type="AudioStream" uid="uid://jud746mww63f" path="res://bubble/assets/pop-sounds/pop6.ogg" id="8_l0pmb"]
+[ext_resource type="AudioStream" uid="uid://by81rxj5dq77y" path="res://bubble/assets/pop-sounds/pop7.ogg" id="9_ofhs7"]
+[ext_resource type="AudioStream" uid="uid://da1mul872crm3" path="res://bubble/assets/pop-sounds/pop8.ogg" id="10_lqbm4"]
+[ext_resource type="AudioStream" uid="uid://vva2i5pv16gj" path="res://bubble/assets/pop-sounds/pop9.ogg" id="11_u42ic"]
+[ext_resource type="AudioStream" uid="uid://d1mcqrlk1xn2x" path="res://bubble/assets/pop-sounds/pop10.ogg" id="12_foulo"]
 
 [node name="BasicBubble" type="Node2D"]
 script = ExtResource("1_fownq")
@@ -34,3 +44,46 @@ visible = false
 texture = ExtResource("2_5bted")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
+
+[node name="PopSounds" type="Node" parent="."]
+
+[node name="Pop1" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("3_ksbib")
+max_polyphony = 7
+bus = &"PopSounds"
+
+[node name="Pop2" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("4_6cu8p")
+bus = &"PopSounds"
+
+[node name="Pop3" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("5_jumsv")
+bus = &"PopSounds"
+
+[node name="Pop4" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("6_gqjb4")
+bus = &"PopSounds"
+
+[node name="Pop5" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("7_npqph")
+bus = &"PopSounds"
+
+[node name="Pop6" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("8_l0pmb")
+bus = &"PopSounds"
+
+[node name="Pop7" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("9_ofhs7")
+bus = &"PopSounds"
+
+[node name="Pop8" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("10_lqbm4")
+bus = &"PopSounds"
+
+[node name="Pop9" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("11_u42ic")
+bus = &"PopSounds"
+
+[node name="Pop10" type="AudioStreamPlayer" parent="PopSounds"]
+stream = ExtResource("12_foulo")
+bus = &"PopSounds"
