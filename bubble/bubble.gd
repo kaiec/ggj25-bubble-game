@@ -9,7 +9,7 @@ func burst():
 	if bursting:
 		return
 	print("Burst start at ", cell)
-	super.burst()
+	await super()
 	var new_bubbles = []
 	for n in [Vector2i.UP, Vector2i.DOWN, Vector2i.RIGHT, Vector2i.LEFT]:
 		var c = cell + n

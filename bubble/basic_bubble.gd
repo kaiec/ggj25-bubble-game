@@ -16,6 +16,15 @@ extends Node2D
 var bursting := false
 var anim_offset := 0.0
 
+var animation_time = 0.3
+
+@onready var projectiles = {
+	$LeftProjectile: Vector2(-32, 0),
+	$RightProjectile: Vector2(32, 0),
+	$UpProjectile: Vector2(0, 32),
+	$DownProjectile: Vector2(0, -32),
+}
+
 var engine: BubbleEngine:
 	get():
 		if Engine.is_editor_hint(): return null
@@ -53,7 +62,7 @@ func spawn_animation():
 	scale = Vector2(0,0)
 	show()
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
-	tween.tween_property(self, "scale", Vector2(1,1), 0.4)
+	tween.tween_property(self, "scale", Vector2(1,1), animation_time)
 	await tween.finished
 	print("Spawn animation finished: ", self)
 	
@@ -65,8 +74,11 @@ func burst():
 	bursting = true
 	remove_from_group("goal")
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
-	tween.tween_property(self, "scale", Vector2(2,2), 0.3)
-	tween.tween_property(self, "modulate:a", 0.5, 0.3)
+	tween.tween_property(sprite, "scale", Vector2(2,2), animation_time)
+	tween.tween_property(sprite, "modulate:a", 0.5, animation_time)
+	for proj in projectiles:
+		proj.show()
+		tween.tween_property(proj, "position", proj.position + projectiles[proj], animation_time)
 	await tween.finished
 	hide()
 

@@ -1,12 +1,36 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbm74kal33eq3"]
 
 [ext_resource type="Script" path="res://bubble/basic_bubble.gd" id="1_fownq"]
-[ext_resource type="Texture2D" uid="uid://cjsyyawrsyp27" path="res://bubble/assets/bubbleSprites.png" id="2_5bted"]
+[ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="2_5bted"]
 
 [node name="BasicBubble" type="Node2D"]
 script = ExtResource("1_fownq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_5bted")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="LeftProjectile" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_5bted")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="RightProjectile" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_5bted")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="UpProjectile" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_5bted")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="DownProjectile" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_5bted")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
