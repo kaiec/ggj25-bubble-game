@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bff82j18q2akq"]
+
+[ext_resource type="Texture2D" uid="uid://qabhfojj8r3x" path="res://bubble/assets/tiles.png" id="1_2bat5"]
+[ext_resource type="Script" path="res://bubble/bubble.gd" id="1_svlvq"]
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_svlvq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.435294, 0.270588, 1, 1)
+texture = ExtResource("1_2bat5")
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 32)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
