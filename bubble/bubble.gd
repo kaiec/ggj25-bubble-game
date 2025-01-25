@@ -12,6 +12,7 @@ extends Node2D
 			label.text = str(size)
 
 var bursting := false
+var anim_offset := 0.0
 
 @onready var engine: BubbleEngine = $"../.."
 
@@ -24,6 +25,7 @@ var cell : Vector2i = Vector2i(-1, -1):
 func _ready() -> void:
 	size = size
 	hide()
+	anim_offset = randf() * 100
 
 
 func check_burst():
@@ -59,4 +61,4 @@ func burst():
 func _process(_delta: float) -> void:
 	var pos = engine.area.map_to_local(cell)
 	var time : float = float(Time.get_ticks_msec()) / 200
-	position.y = pos.y + 2 * sin(time)
+	position.y = pos.y + 2 * sin(time + anim_offset)
