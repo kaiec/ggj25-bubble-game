@@ -12,7 +12,6 @@ blend_mode = 4
 process_mode = 3
 script = ExtResource("1_htktm")
 max_level = 1
-bypass = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_v1n10")

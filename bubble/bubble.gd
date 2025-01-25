@@ -50,6 +50,7 @@ func burst():
 	if bursting:
 		return
 	bursting = true
+	remove_from_group("goal")
 	print("Burst at ", cell)
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
 	tween.tween_property(self, "scale", Vector2(2,2), 0.3)
