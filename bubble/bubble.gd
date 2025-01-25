@@ -8,7 +8,6 @@ func burst():
 	
 	if bursting:
 		return
-	print("Burst at ", cell)
 	super.burst()
 	var new_bubbles = []
 	for n in [Vector2i.UP, Vector2i.DOWN, Vector2i.RIGHT, Vector2i.LEFT]:

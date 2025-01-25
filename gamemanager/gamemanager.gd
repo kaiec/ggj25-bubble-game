@@ -33,8 +33,6 @@ func _ready() -> void:
 	# Load settingsz
 	Settings.load_config()
 	
-	if OS.get_name() == "Web":
-		Settings._set_graphics(Settings.GraphicsPreset.TOASTER)
 		
 	# Connect to InputManager
 	InputManager.game_pause.connect(pause)
