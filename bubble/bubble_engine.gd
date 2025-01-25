@@ -27,6 +27,7 @@ const GOAL = Vector2i(2,0)
 
 var state : State:
 	set(new_state):
+		print("State change ", state, " -> ", new_state)
 		if state:
 			state.exit_state()
 		state = new_state
@@ -46,7 +47,7 @@ func get_bubble(cell):
 		if cell == bubble.cell:
 			return bubble
 
-func spawn_bubble(cell, type=BUBBLE):
+func spawn_bubble(cell, type=BUBBLE) -> Bubble:
 	var bubble = type.instantiate()
 	bubbles.add_child(bubble)
 	bubble.cell = cell
@@ -57,12 +58,13 @@ func level_reset():
 	setup.hide()
 	for cell in setup.get_used_cells():
 		if setup.get_cell_atlas_coords(cell) == BLUE:
-			spawn_bubble(cell)
+			spawn_bubble(cell).spawn_animation()
 		if setup.get_cell_atlas_coords(cell) == GOAL:
 			var bubble = spawn_bubble(cell)
 			bubble.size = 3
 			bubble.sprite.modulate = Color.BLACK
 			bubble.add_to_group("goal")
+			bubble.spawn_animation()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

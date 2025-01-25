@@ -14,7 +14,11 @@ class_name GameManager
 ## Formatable Strig pointing to
 @export var level_location = "res://levels/level_%s.tscn"
 
-@onready var pause_menu: Control
+# Quick checking of a level
+@export var bypass : bool = false
+@export var jump_to_level : int = 1
+
+@onready var pause_menu: Control = $SubViewportContainer/MenuLayer/PauseMenu
 @onready var menu_layer: Viewport = $SubViewportContainer/MenuLayer
 
 var level = 0
@@ -38,7 +42,11 @@ func _ready() -> void:
 	InputManager.set_is_in_game(false)
 	InputManager.set_is_paused(false)
 	
-	_show_title_screen()
+	if bypass:
+		level = jump_to_level - 1
+		_next_level()
+	else:
+		_show_title_screen()
 	
 func _start_game() -> void:
 	level = 0
@@ -51,6 +59,7 @@ func pause():
 	pause_menu.move_to_front()
 	pause_menu.show()
 	get_tree().paused = true
+	$SubViewportContainer.move_to_front()
 	
 func resume():
 	InputManager.set_is_paused(false)
@@ -63,6 +72,7 @@ func resume():
 #region Level Loading
 
 func _show_main_level() -> void:
+	InputManager.set_is_in_game(true)
 	var next_level: Node = main_level.instantiate()
 	if next_level.has_signal("win"):
 		next_level.win.connect(_next_level)
