@@ -6,9 +6,12 @@ extends Node2D
 
 @export var size: int = 1:
 	set(value):
+		print("Size changed ", size, " -> ", value, " (", self, ")")
 		size = value
 		if label:
 			label.text = str(size)
+
+var bursting := false
 
 @onready var engine: BubbleEngine = $"../.."
 
@@ -27,13 +30,18 @@ func check_burst():
 	return size > 3
 
 func spawn_animation():
+	print("Spawn animation start: ", self)
 	scale = Vector2(0,0)
 	show()
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
 	tween.tween_property(self, "scale", Vector2(1,1), 1)
 	await tween.finished
+	print("Spawn animation finished: ", self)
 	
 func burst():
+	if bursting:
+		return
+	bursting = true
 	print("Burst at ", cell)
 	var new_bubbles = []
 	for n in [Vector2i.UP, Vector2i.DOWN, Vector2i.RIGHT, Vector2i.LEFT]:
@@ -46,7 +54,6 @@ func burst():
 			if new_bubble:
 				new_bubbles.append(new_bubble.spawn_animation)
 	await Co.await_all(new_bubbles)
-	queue_free()
 	print("Burst ended at ", cell)
 
 func _process(_delta: float) -> void:

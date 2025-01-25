@@ -5,7 +5,8 @@ extends State
 func enter_state():
 	var callables = []
 	for bubble in engine.to_be_burst:
-		callables.append(bubble.burst)
+		if not bubble.bursting:
+			callables.append(bubble.burst)
 	print("Trigger all bursts")
 	await Co.await_all(callables)
 	print("All bursts done")
