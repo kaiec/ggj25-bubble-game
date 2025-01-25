@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqjvrwyyltsen"]
-
-[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/bubble.tscn" id="1_mwj5f"]
-
-[node name="BadBubble" instance=ExtResource("1_mwj5f")]

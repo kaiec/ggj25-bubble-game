@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqjvrwyyltsen"]
+
+[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="1_7mebs"]
+
+[node name="BadBubble" groups=["goal"] instance=ExtResource("1_7mebs")]
+
+[node name="Sprite" parent="." index="0" groups=["goal", "unclickable"]]
+modulate = Color(0.230315, 0.230315, 0.230315, 1)

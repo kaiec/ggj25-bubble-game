@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjt4tsttw2c5r"]
+
+[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="1_81tts"]
+
+[node name="Bubble" instance=ExtResource("1_81tts")]
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color(0.245195, 0.469301, 0.681353, 1)

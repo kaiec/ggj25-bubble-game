@@ -12,7 +12,6 @@ func _ready() -> void:
 		)
 	for bubble in $Bubbles.get_children():
 		bubble.cell = $Area.local_to_map(bubble.position)
-		bubble.position = $Area.map_to_local(bubble.cell)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

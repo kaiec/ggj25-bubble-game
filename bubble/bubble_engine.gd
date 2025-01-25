@@ -20,7 +20,7 @@ var to_be_burst = []
 
 @onready var cursor: Sprite2D = $Cursor
 
-const BUBBLE = preload("res://bubble/bubble.tscn")
+const BUBBLE = preload("res://bubble/game_objects/bubble.tscn")
 const BLUE = Vector2i(3,0)
 const GOAL = Vector2i(2,0)
 
@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 
 func select_bubble(cell) -> bool:
 	var bubble = get_bubble(cell)
-	if bubble and not bubble.is_in_group("goal"):
+	if bubble and not bubble.is_in_group("unclickable"):
 		bubble.size += 1
 		return true
 	return false
