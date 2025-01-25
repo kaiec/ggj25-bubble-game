@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbm74kal33eq3"]
 
 [ext_resource type="Texture2D" uid="uid://qabhfojj8r3x" path="res://bubble/assets/tiles.png" id="1_2bat5"]
-[ext_resource type="Script" path="res://bubble/bubble.gd" id="1_svlvq"]
+[ext_resource type="Script" path="res://bubble/basic_bubble.gd" id="1_fownq"]
 
-[node name="Bubble" type="Node2D"]
-script = ExtResource("1_svlvq")
+[node name="BasicBubble" type="Node2D"]
+script = ExtResource("1_fownq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-modulate = Color(0.435294, 0.270588, 1, 1)
 texture = ExtResource("1_2bat5")
 region_enabled = true
 region_rect = Rect2(96, 0, 32, 32)

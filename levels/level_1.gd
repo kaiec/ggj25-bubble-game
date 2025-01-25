@@ -10,6 +10,8 @@ func _ready() -> void:
 		win.emit()
 		queue_free()
 		)
+	for bubble in $Bubbles.get_children():
+		bubble.cell = $Area.local_to_map(bubble.position)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
