@@ -14,7 +14,12 @@ extends Node2D
 var bursting := false
 var anim_offset := 0.0
 
-@onready var engine: BubbleEngine = $"../.."
+var engine: BubbleEngine:
+	get():
+		if !engine:
+			engine = get_parent().get_parent().find_child("BubbleEngine")
+			print(engine)
+		return engine
 
 var cell : Vector2i = Vector2i(-1, -1):
 	set(new_cell):
@@ -24,8 +29,9 @@ var cell : Vector2i = Vector2i(-1, -1):
 
 func _ready() -> void:
 	size = size
-	hide()
 	anim_offset = randf() * 100
+	hide()
+	spawn_animation()
 
 
 func check_burst():

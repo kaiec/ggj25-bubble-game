@@ -5,7 +5,6 @@ signal win
 
 # Level Design
 @export var area : TileMapLayer
-@export var setup : TileMapLayer
 
 # States
 @onready var select_cell: Node = $States/SelectCell
@@ -15,7 +14,7 @@ signal win
 @onready var finish: Node = $States/Finish
 
 # Instanced bubbles
-@onready var bubbles: Node2D = $Bubbles
+@onready var bubbles: Node2D = get_parent().find_child("Bubbles")
 var to_be_burst = []
 
 
@@ -55,16 +54,6 @@ func spawn_bubble(cell, type=BUBBLE) -> Bubble:
 
 func level_reset():
 	bubbles.get_children().clear()
-	setup.hide()
-	for cell in setup.get_used_cells():
-		if setup.get_cell_atlas_coords(cell) == BLUE:
-			spawn_bubble(cell).spawn_animation()
-		if setup.get_cell_atlas_coords(cell) == GOAL:
-			var bubble = spawn_bubble(cell)
-			bubble.size = 3
-			bubble.sprite.modulate = Color.BLACK
-			bubble.add_to_group("goal")
-			bubble.spawn_animation()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
