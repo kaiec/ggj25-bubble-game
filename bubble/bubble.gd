@@ -36,7 +36,7 @@ func spawn_animation():
 	scale = Vector2(0,0)
 	show()
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
-	tween.tween_property(self, "scale", Vector2(1,1), 1)
+	tween.tween_property(self, "scale", Vector2(1,1), 0.4)
 	await tween.finished
 	print("Spawn animation finished: ", self)
 	
@@ -45,6 +45,11 @@ func burst():
 		return
 	bursting = true
 	print("Burst at ", cell)
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
+	tween.tween_property(self, "scale", Vector2(2,2), 0.3)
+	tween.tween_property(self, "modulate:a", 0.5, 0.3)
+	await tween.finished
+	hide()
 	var new_bubbles = []
 	for n in [Vector2i.UP, Vector2i.DOWN, Vector2i.RIGHT, Vector2i.LEFT]:
 		var c = cell + n
