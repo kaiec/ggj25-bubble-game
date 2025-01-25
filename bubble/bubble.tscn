@@ -10,7 +10,7 @@ script = ExtResource("1_svlvq")
 modulate = Color(0.435294, 0.270588, 1, 1)
 texture = ExtResource("1_2bat5")
 region_enabled = true
-region_rect = Rect2(192, 0, 64, 64)
+region_rect = Rect2(96, 0, 32, 32)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
