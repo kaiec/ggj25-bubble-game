@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
-[ext_resource type="Texture2D" uid="uid://jbeuthlsm6ch" path="res://bubble/assets/BackgroundSixFortyThreeSixty.png" id="2_rwe61"]
+[ext_resource type="Texture2D" uid="uid://bc18q8uq3ov86" path="res://bubble/assets/BackgroundGrayscale.jpeg" id="2_i8bs5"]
 [ext_resource type="Environment" uid="uid://bhb4ckqipjvu3" path="res://other/main_environment.tres" id="2_v1n10"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
 [ext_resource type="AudioStream" uid="uid://d26781t8hwomq" path="res://bubble/assets/music/forest.ogg" id="5_dn5ay"]
@@ -18,12 +18,11 @@ max_level = 3
 jump_to_level = 2
 
 [node name="BackgroundSixFortyThreeSixty" type="Sprite2D" parent="."]
-modulate = Color(0, 0.378, 0.84, 1)
+modulate = Color(0.076, 0.2242, 0.76, 0.521569)
 texture_repeat = 2
-position = Vector2(318, 185)
-scale = Vector2(0.106223, 0.106223)
-texture = ExtResource("2_rwe61")
-region_enabled = true
+position = Vector2(327, 176)
+scale = Vector2(1.05182, 1.05182)
+texture = ExtResource("2_i8bs5")
 region_rect = Rect2(0, 0, 6400, 3600)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
