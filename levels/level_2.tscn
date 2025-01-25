@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://saadwcy1u1fp"]
+[gd_scene load_steps=7 format=4 uid="uid://saadwcy1u1fp"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_r125i"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_e3paf"]
 [ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="3_2l1eu"]
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="4_vgg8f"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_yxl3t"]
+[ext_resource type="Texture2D" uid="uid://dqbvfnx3sxax2" path="res://bubble/assets/NameTextTransparent.png" id="6_hu4dm"]
 
 [node name="Level 1" type="Node2D"]
 process_mode = 1
@@ -55,3 +56,9 @@ size = 3
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("5_yxl3t")]
 position = Vector2(240, 176)
 size = 3
+
+[node name="NameTextTransparent" type="Sprite2D" parent="."]
+position = Vector2(512, 90)
+rotation = 0.416747
+scale = Vector2(0.337798, 0.337798)
+texture = ExtResource("6_hu4dm")
