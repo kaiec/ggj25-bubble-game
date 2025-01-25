@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cx0wgckga1wfc"]
 
 [ext_resource type="Script" path="res://bubble/bubble_engine.gd" id="1_0hk77"]
-[ext_resource type="Script" path="res://bubble/select_cell.gd" id="2_bepp4"]
+[ext_resource type="Script" path="res://bubble/state_machine/select_cell.gd" id="2_bepp4"]
 [ext_resource type="Texture2D" uid="uid://qabhfojj8r3x" path="res://bubble/assets/tiles.png" id="3_eeh7o"]
-[ext_resource type="Script" path="res://bubble/check_burst.gd" id="3_stktg"]
-[ext_resource type="Script" path="res://bubble/burst.gd" id="4_147cl"]
-[ext_resource type="Script" path="res://bubble/check_win.gd" id="5_xkthi"]
-[ext_resource type="Script" path="res://bubble/finish.gd" id="6_ucinb"]
+[ext_resource type="Script" path="res://bubble/state_machine/check_burst.gd" id="3_stktg"]
+[ext_resource type="Script" path="res://bubble/state_machine/burst.gd" id="4_147cl"]
+[ext_resource type="Script" path="res://bubble/state_machine/check_win.gd" id="5_xkthi"]
+[ext_resource type="Script" path="res://bubble/state_machine/finish.gd" id="6_ucinb"]
 
 [node name="BubbleEngine" type="Node2D"]
 script = ExtResource("1_0hk77")
