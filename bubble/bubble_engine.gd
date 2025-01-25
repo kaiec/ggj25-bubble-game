@@ -20,9 +20,15 @@ var to_be_burst = []
 
 @onready var cursor: Sprite2D = $Cursor
 
-const BUBBLE = preload("res://bubble/game_objects/bubble.tscn")
-const BLUE = Vector2i(3,0)
-const GOAL = Vector2i(2,0)
+enum BubbleType {
+	BUBBLE,
+	PROJECTILE,
+}
+
+var type_to_bubble = {
+	BubbleType.BUBBLE: preload("res://bubble/game_objects/bubble.tscn"),
+	BubbleType.PROJECTILE: preload("res://bubble/projectile.tscn"),
+}
 
 var state : State:
 	set(new_state):
@@ -46,8 +52,8 @@ func get_bubble(cell):
 		if cell == bubble.cell:
 			return bubble
 
-func spawn_bubble(cell, type=BUBBLE) -> Bubble:
-	var bubble = type.instantiate()
+func spawn_bubble(cell, type=BubbleType.BUBBLE) -> BasicBubble:
+	var bubble = type_to_bubble[type].instantiate()
 	bubbles.add_child(bubble)
 	bubble.cell = cell
 	return bubble

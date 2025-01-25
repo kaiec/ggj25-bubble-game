@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://da3qq2y08o1v"]
+
+[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="1_cx55r"]
+[ext_resource type="Script" path="res://bubble/projectile.gd" id="2_tc73a"]
+
+[node name="Projectile" instance=ExtResource("1_cx55r")]
+script = ExtResource("2_tc73a")

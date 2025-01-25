@@ -2,18 +2,16 @@
 class_name BasicBubble
 extends Node2D
 
-@onready var label: Label = $Label:
+@onready var sprite: Sprite2D:
 	get():
-		return $Label
-
-@onready var sprite: Sprite2D = $Sprite
+		return $Sprite
 
 @export var size: int = 1:
 	set(value):
 		print("Size changed ", size, " -> ", value, " (", self, ")")
 		size = value
-		if label:
-			label.text = str(size)
+		if sprite:
+			sprite.region_rect.position.x = (size-1)*32
 
 var bursting := false
 var anim_offset := 0.0

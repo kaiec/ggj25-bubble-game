@@ -8,6 +8,7 @@ func burst():
 	
 	if bursting:
 		return
+	print("Burst start at ", cell)
 	super.burst()
 	var new_bubbles = []
 	for n in [Vector2i.UP, Vector2i.DOWN, Vector2i.RIGHT, Vector2i.LEFT]:
@@ -16,8 +17,9 @@ func burst():
 		if bubble:
 			bubble.size += 1
 		elif c in engine.area.get_used_cells():
-			var new_bubble = engine.spawn_bubble(c)
+			var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)
 			if new_bubble:
+				new_bubble.direction = n
 				new_bubbles.append(new_bubble.spawn_animation)
 	await Co.await_all(new_bubbles)
 	print("Burst ended at ", cell)

@@ -48,10 +48,6 @@ size = 3
 position = Vector2(144, 176)
 size = 3
 
-[node name="Bubble3" parent="Bubbles" groups=["unclickable"] instance=ExtResource("4_vgg8f")]
-position = Vector2(176, 176)
-size = 3
-
 [node name="Bubble4" parent="Bubbles" groups=["unclickable"] instance=ExtResource("4_vgg8f")]
 position = Vector2(208, 176)
 size = 3
