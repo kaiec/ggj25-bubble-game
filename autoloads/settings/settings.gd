@@ -2,13 +2,11 @@ extends Node
 
 #region Helper enums and data classes
 
-enum SettingCategory {AUDIO, CONTROLS, GRAPHICS, ACCESSIBILITY}
+enum SettingCategory {AUDIO, GRAPHICS}
 func category_string(cat: SettingCategory) -> String:
 	match cat:
 		SettingCategory.AUDIO: return "Audio"
-		SettingCategory.CONTROLS: return "Controls"
 		SettingCategory.GRAPHICS: return "Graphics"
-		SettingCategory.ACCESSIBILITY: return "Accessibility"
 		_: return "unknown category"
 
 enum SettingType {INT, ENUM, FLOAT, BOOL, SECTION, INPUT_BINDING}
@@ -50,8 +48,8 @@ var settings: Dictionary = {}
 func _ready() -> void:
 	AudioSettings._register_settings()
 	GraphicsSettings._register_settings()
-	ControlSettings._register_settings()
-	AccessibilitySettings._register_settings()
+	#ControlSettings._register_settings()
+	#AccessibilitySettings._register_settings()
 
 #region Settings interface
 

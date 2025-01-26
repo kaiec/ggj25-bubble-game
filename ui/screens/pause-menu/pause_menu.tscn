@@ -24,8 +24,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = 54.0
+offset_right = 98.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.684292, 0.684292)
 theme = ExtResource("1_0kumn")
 script = ExtResource("2_0mnak")
 
@@ -40,6 +45,7 @@ grow_vertical = 2
 [node name="MainPauseMenuPopup" type="PanelContainer" parent="CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("1_0kumn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MainPauseMenuPopup"]
 custom_minimum_size = Vector2(250, 0)
@@ -64,6 +70,7 @@ layout_mode = 2
 text = "Quit to title screen"
 
 [node name="ExitGameBtn" type="Button" parent="CenterContainer/MainPauseMenuPopup/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Quit game"
 
@@ -71,6 +78,7 @@ text = "Quit game"
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+theme = ExtResource("1_0kumn")
 theme_override_styles/panel = SubResource("StyleBoxFlat_q4jql")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/SettingsMenuPopup"]
