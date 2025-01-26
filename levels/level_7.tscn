@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b6xylqxxbqbnt"]
+[gd_scene load_steps=9 format=4 uid="uid://b6xylqxxbqbnt"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_0tx2n"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_7cdl3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="5_vxpud"]
 [ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="6_uhufy"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="7_dtq2m"]
+[ext_resource type="PackedScene" uid="uid://de5gcm2mubx77" path="res://bubble/game_objects/diagonal_bubble.tscn" id="8_smj0f"]
 
 [node name="Level 1" type="Node2D"]
 process_mode = 1
@@ -34,22 +35,22 @@ size = 3
 position = Vector2(272, 272)
 size = 2
 
-[node name="Bubble" parent="Bubbles" instance=ExtResource("5_vxpud")]
-position = Vector2(112, 208)
-size = 3
-
-[node name="Bubble2" parent="Bubbles" instance=ExtResource("5_vxpud")]
-position = Vector2(240, 208)
-size = 3
-
-[node name="Bubble3" parent="Bubbles" instance=ExtResource("5_vxpud")]
-position = Vector2(240, 240)
-size = 3
-
 [node name="Bubble4" parent="Bubbles" instance=ExtResource("5_vxpud")]
 position = Vector2(176, 208)
 size = 3
 
 [node name="BasicBubble2" parent="Bubbles" instance=ExtResource("6_uhufy")]
 position = Vector2(176, 240)
+size = 3
+
+[node name="Bubble" parent="Bubbles" instance=ExtResource("8_smj0f")]
+position = Vector2(112, 208)
+size = 3
+
+[node name="Bubble2" parent="Bubbles" instance=ExtResource("8_smj0f")]
+position = Vector2(240, 208)
+size = 3
+
+[node name="Bubble3" parent="Bubbles" instance=ExtResource("8_smj0f")]
+position = Vector2(240, 240)
 size = 3

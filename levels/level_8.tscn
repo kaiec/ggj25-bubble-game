@@ -1,18 +1,20 @@
-[gd_scene load_steps=7 format=4 uid="uid://cclsdlh42ilcb"]
+[gd_scene load_steps=9 format=4 uid="uid://cclsdlh42ilcb"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_o6li8"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_db55c"]
 [ext_resource type="PackedScene" path="res://bubble/gui.tscn" id="3_3ryqx"]
 [ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="4_2ytds"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_uq5lx"]
+[ext_resource type="PackedScene" uid="uid://de5gcm2mubx77" path="res://bubble/game_objects/diagonal_bubble.tscn" id="7_grxgy"]
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="7_j70bg"]
+[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="8_o5nkc"]
 
 [node name="Level 1" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_o6li8")
 
 [node name="Area" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAHAAUAAAABAAAAAAAHAAQAAAABAAAAAAACAAQAAAABAAAAAAACAAUAAAABAAAAAAAGAAQAAAABAAAAAAADAAQAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAFAAQAAAABAAAAAAAEAAQAAAABAAAAAAAGAAUAAAABAAAAAAAJAAcAAAABAAAAAAAIAAYAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAHAAIAAAABAAAAAAAGAAIAAAABAAAAAAAFAAIAAAABAAAAAAAEAAIAAAABAAAAAAADAAIAAAABAAAAAAACAAIAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAHAAUAAAABAAAAAAAHAAQAAAABAAAAAAACAAQAAAABAAAAAAACAAUAAAABAAAAAAAGAAQAAAABAAAAAAADAAQAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAFAAQAAAABAAAAAAAEAAQAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAJAAgAAAABAAAAAAAIAAcAAAABAAAAAAAHAAYAAAABAAAAAAACAAYAAAABAAAAAAADAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAA=")
 tile_set = ExtResource("2_db55c")
 
 [node name="GUI" parent="." instance=ExtResource("3_3ryqx")]
@@ -25,25 +27,69 @@ area = NodePath("../Area")
 unique_name_in_owner = true
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("5_uq5lx")]
-position = Vector2(304, 240)
+position = Vector2(304, 272)
 size = 3
 
 [node name="Bubble" parent="Bubbles" instance=ExtResource("7_j70bg")]
-position = Vector2(240, 80)
+position = Vector2(240, 112)
 size = 3
 
 [node name="Bubble2" parent="Bubbles" instance=ExtResource("7_j70bg")]
-position = Vector2(80, 176)
+position = Vector2(80, 208)
 size = 3
 
 [node name="Bubble3" parent="Bubbles" instance=ExtResource("7_j70bg")]
 position = Vector2(176, 112)
-size = 3
+size = 2
 
 [node name="Bubble4" parent="Bubbles" instance=ExtResource("7_j70bg")]
-position = Vector2(176, 80)
-size = 3
+position = Vector2(176, 144)
+size = 2
 
-[node name="Bubble5" parent="Bubbles" instance=ExtResource("7_j70bg")]
+[node name="Bubble5" parent="Bubbles" instance=ExtResource("7_grxgy")]
+position = Vector2(144, 144)
+size = 2
+
+[node name="BasicBubble" parent="Bubbles" instance=ExtResource("8_o5nkc")]
+position = Vector2(112, 176)
+size = 2
+
+[node name="Bubble6" parent="Bubbles" instance=ExtResource("7_grxgy")]
+position = Vector2(208, 144)
+size = 2
+
+[node name="BasicBubble2" parent="Bubbles" instance=ExtResource("8_o5nkc")]
+position = Vector2(208, 112)
+size = 2
+
+[node name="Bubble7" parent="Bubbles" instance=ExtResource("7_grxgy")]
+position = Vector2(176, 176)
+size = 2
+
+[node name="Bubble8" parent="Bubbles" instance=ExtResource("7_j70bg")]
+position = Vector2(144, 176)
+size = 2
+
+[node name="Bubble9" parent="Bubbles" instance=ExtResource("7_j70bg")]
 position = Vector2(144, 112)
-size = 3
+size = 2
+
+[node name="Bubble10" parent="Bubbles" instance=ExtResource("7_grxgy")]
+position = Vector2(112, 144)
+size = 2
+
+[node name="Bubble11" parent="Bubbles" instance=ExtResource("7_j70bg")]
+position = Vector2(80, 176)
+size = 2
+
+[node name="Bubble12" parent="Bubbles" instance=ExtResource("7_j70bg")]
+position = Vector2(80, 144)
+size = 2
+
+[node name="Bubble13" parent="Bubbles" instance=ExtResource("7_grxgy")]
+position = Vector2(80, 112)
+size = 2
+
+[node name="BasicBubble3" parent="Bubbles" instance=ExtResource("8_o5nkc")]
+position = Vector2(112, 112)
+size = 2
