@@ -45,7 +45,6 @@ var state : State:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	level_reset()
-	state = select_cell
 	if state:
 		state.state_ready()
 	finish.finished.connect(win.emit)
@@ -63,6 +62,7 @@ func spawn_bubble(cell, type=BubbleType.BUBBLE) -> BasicBubble:
 
 func level_reset():
 	bubbles.get_children().clear()
+	state = select_cell
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
