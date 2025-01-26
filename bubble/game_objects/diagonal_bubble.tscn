@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="1_3klcd"]
 [ext_resource type="Script" path="res://bubble/diagonal_bubble.gd" id="2_r03ev"]
 
-[node name="Bubble" instance=ExtResource("1_3klcd")]
+[node name="DiagonalBubble" instance=ExtResource("1_3klcd")]
 modulate = Color(0.2448, 0.68, 0.346347, 1)
 script = ExtResource("2_r03ev")
 class_type = "Diagonal"
