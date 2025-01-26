@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://8wabbya8yr6y"]
+[gd_scene load_steps=4 format=3 uid="uid://ckmaf8g03oxh"]
 
 [ext_resource type="Texture2D" uid="uid://dqbvfnx3sxax2" path="res://bubble/assets/NameTextTransparent.png" id="1_ejnqp"]
 [ext_resource type="Script" path="res://bubble/gui.gd" id="1_i6uln"]

@@ -101,6 +101,8 @@ func _show_level(level_nr: int) -> void:
 	current_level_node = next_level
 	
 func _reload_current_level() -> void:
+	current_level_node.queue_free()
+	current_level_node = null
 	_show_level(level)
 #endregion
 

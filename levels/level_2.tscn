@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_r125i"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_e3paf"]
 [ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="3_2l1eu"]
-[ext_resource type="PackedScene" path="res://bubble/gui.tscn" id="3_lomhd"]
+[ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_lomhd"]
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="4_vgg8f"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_yxl3t"]
 
