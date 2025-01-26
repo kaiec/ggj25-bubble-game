@@ -16,6 +16,7 @@ process_mode = 3
 script = ExtResource("1_htktm")
 max_level = 8
 bypass = true
+jump_to_level = 2
 
 [node name="BackgroundSixFortyThreeSixty" type="Sprite2D" parent="."]
 modulate = Color(0.076, 0.2242, 0.76, 0.521569)

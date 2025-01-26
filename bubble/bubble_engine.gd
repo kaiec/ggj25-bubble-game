@@ -3,6 +3,7 @@ extends Node2D
 
 signal win
 signal click(clicks_left : int)
+signal false_click
 
 # Level Design
 @export var area : TileMapLayer
@@ -77,6 +78,7 @@ func select_bubble(cell) -> bool:
 	var bubble = get_bubble(cell)
 	if bubble and not bubble.is_in_group("unclickable"):
 		if use_max_clicks and clicks_left == 0:
+			false_click.emit()
 			return false
 		# TODO clicks left
 		bubble.size += 1
