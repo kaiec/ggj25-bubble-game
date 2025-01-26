@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_r125i"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_e3paf"]
 [ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="3_2l1eu"]
-[ext_resource type="PackedScene" uid="uid://8wabbya8yr6y" path="res://bubble/gui.tscn" id="3_lomhd"]
+[ext_resource type="PackedScene" path="res://bubble/gui.tscn" id="3_lomhd"]
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="4_vgg8f"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_yxl3t"]
 
 [node name="Level 1" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_r125i")
+max_clicks = 1
 
 [node name="Area" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAQAAAABAAAAAAAEAAQAAAABAAAAAAAGAAQAAAABAAAAAAAFAAMAAAABAAAAAAADAAQAAAABAAAAAAADAAMAAAABAAAAAAADAAIAAAABAAAAAAADAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAA=")
@@ -28,11 +29,11 @@ unique_name_in_owner = true
 position = Vector2(112, 176)
 size = 3
 
-[node name="Bubble2" parent="Bubbles" groups=["unclickable"] instance=ExtResource("4_vgg8f")]
+[node name="Bubble2" parent="Bubbles" instance=ExtResource("4_vgg8f")]
 position = Vector2(144, 176)
 size = 3
 
-[node name="Bubble4" parent="Bubbles" groups=["unclickable"] instance=ExtResource("4_vgg8f")]
+[node name="Bubble4" parent="Bubbles" instance=ExtResource("4_vgg8f")]
 position = Vector2(208, 176)
 size = 3
 
