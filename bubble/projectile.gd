@@ -3,6 +3,10 @@ extends BasicBubble
 
 var direction := Vector2i(1, 0)
 
+func _ready() -> void:
+	super()
+	class_type = "Projectile"
+
 func check_burst():
 	return true
 
@@ -26,14 +30,22 @@ func burst():
 	await tween.finished
 	var c = cell + direction
 	var bubble = engine.get_bubble(c)
-	if bubble:
-		if bubble is Projectile:
+	if bubble and not bubble in engine.to_be_burst:
+		print("Class: ", bubble.class_type)
+		if bubble.class_type == "Projectile":
 			bubble.queue_free()
 			# Check if we are diagonal
 			if direction.length()>1:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
 			else:
+				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)			
+		elif bubble.class_type == "BasicBubble":
+			bubble.queue_free()
+			# Check if we are diagonal
+			if direction.length()>1:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
+			else:
+				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)			
 		bubble.size += 1
 	elif c in engine.area.get_used_cells():
 		var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)

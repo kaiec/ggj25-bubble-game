@@ -4,3 +4,4 @@
 
 [node name="BadBubble" groups=["goal", "unclickable"] instance=ExtResource("1_7mebs")]
 modulate = Color(0.231373, 0.231373, 0.231373, 1)
+class_type = "BadBubble"

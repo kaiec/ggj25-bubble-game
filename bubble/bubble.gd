@@ -8,12 +8,14 @@ var directions = [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]
 @onready var projectiles : Dictionary
 
 func _ready() -> void:
+	class_type = "Bubble"
 	projectiles = {
 		$LeftProjectile: Vector2(directions[0] * 32),
 		$RightProjectile: Vector2(directions[1] * 32),
 		$UpProjectile: Vector2(directions[2] * 32),
 		$DownProjectile: Vector2(directions[3] * 32),
 	}
+	super()
 	
 	
 func burst():
@@ -31,7 +33,22 @@ func burst():
 	for n in directions:
 		var c = cell + n
 		var bubble = engine.get_bubble(c)
-		if bubble:
+		if bubble  and not bubble in engine.to_be_burst:
+			print("Class: ", bubble.class_type)
+			if bubble.class_type == "Projectile":
+				bubble.queue_free()
+				# Check if we are diagonal
+				if n.length()>1:
+					bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
+				else:
+					bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)			
+			elif bubble.class_type == "BasicBubble":
+				bubble.queue_free()
+				# Check if we are diagonal
+				if n.length()>1:
+					bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
+				else:
+					bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)			
 			bubble.size += 1
 		elif c in engine.area.get_used_cells():
 			var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)
