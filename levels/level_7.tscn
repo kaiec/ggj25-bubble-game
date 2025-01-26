@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="7_dtq2m"]
 [ext_resource type="PackedScene" uid="uid://de5gcm2mubx77" path="res://bubble/game_objects/diagonal_bubble.tscn" id="8_smj0f"]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_0tx2n")
 max_clicks = 5

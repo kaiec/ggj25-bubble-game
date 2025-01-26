@@ -18,7 +18,12 @@ func _ready() -> void:
 	gui.reset_clicked.connect(_on_gui_reset_clicked)
 	for bubble in $Bubbles.get_children():
 		bubble.cell = $Area.local_to_map(bubble.position)
+	$GUI.set_remaining_bubbles(max_clicks)
+	bubble_engine.click.connect(update_gui)
 
+
+func update_gui(clicks_left : int):
+	$GUI.set_remaining_bubbles(clicks_left)
 
 
 func _on_gui_reset_clicked() -> void:

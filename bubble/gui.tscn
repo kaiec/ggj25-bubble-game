@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckmaf8g03oxh"]
+[gd_scene load_steps=5 format=3 uid="uid://ckmaf8g03oxh"]
 
 [ext_resource type="Texture2D" uid="uid://dqbvfnx3sxax2" path="res://bubble/assets/NameTextTransparent.png" id="1_ejnqp"]
 [ext_resource type="Script" path="res://bubble/gui.gd" id="1_i6uln"]
 [ext_resource type="Texture2D" uid="uid://eypacur02wkl" path="res://bubble/assets/reset-button.png" id="2_ylaur"]
+[ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="4_k8b8a"]
 
 [node name="GUI" type="Node2D"]
 script = ExtResource("1_i6uln")
@@ -14,10 +15,23 @@ scale = Vector2(0.337798, 0.337798)
 texture = ExtResource("1_ejnqp")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 503.0
-offset_top = 234.0
-offset_right = 567.0
-offset_bottom = 298.0
+offset_left = 523.0
+offset_top = 260.0
+offset_right = 587.0
+offset_bottom = 324.0
 texture_normal = ExtResource("2_ylaur")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 408.0
+offset_top = 281.0
+offset_right = 448.0
+offset_bottom = 304.0
+text = "0 x "
+
+[node name="Bubble" type="Sprite2D" parent="."]
+position = Vector2(451, 293)
+texture = ExtResource("4_k8b8a")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

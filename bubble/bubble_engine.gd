@@ -2,6 +2,7 @@ class_name BubbleEngine
 extends Node2D
 
 signal win
+signal click(clicks_left : int)
 
 # Level Design
 @export var area : TileMapLayer
@@ -79,6 +80,8 @@ func select_bubble(cell) -> bool:
 			return false
 		# TODO clicks left
 		bubble.size += 1
+		clicks_left -= 1
+		click.emit(clicks_left)
 		return true
 	return false
 	

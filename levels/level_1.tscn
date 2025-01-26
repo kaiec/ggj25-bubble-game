@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_m5l1w"]
 [ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="5_yi2c4"]
 
-[node name="Level 2" type="Node2D"]
+[node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_ewh2m")
 max_clicks = 3
