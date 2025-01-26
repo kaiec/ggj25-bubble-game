@@ -26,65 +26,33 @@ area = NodePath("../Area")
 unique_name_in_owner = true
 
 [node name="Bubble" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(80, 112)
-size = 3
-
-[node name="Bubble2" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(144, 112)
-size = 3
-
-[node name="Bubble3" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(208, 112)
-size = 3
-
-[node name="Bubble4" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(272, 112)
-size = 3
-
-[node name="Bubble5" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(272, 176)
-size = 3
-
-[node name="Bubble6" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(240, 176)
-size = 3
-
-[node name="Bubble7" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(176, 176)
-size = 3
-
-[node name="Bubble8" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(112, 176)
-size = 3
-
-[node name="Bubble9" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(48, 176)
-size = 3
-
-[node name="Bubble10" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(48, 240)
-size = 3
-
-[node name="Bubble11" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(304, 240)
+position = Vector2(112, 112)
 size = 3
 
 [node name="Bubble12" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(304, 208)
+position = Vector2(208, 112)
 size = 3
 
 [node name="Bubble13" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(208, 208)
-size = 2
+position = Vector2(112, 208)
+size = 3
 
 [node name="Bubble14" parent="Bubbles" instance=ExtResource("4_fye01")]
-position = Vector2(208, 304)
+position = Vector2(272, 272)
 size = 3
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("5_qlsf7")]
-position = Vector2(112, 304)
+position = Vector2(80, 272)
 size = 2
 
 [node name="Bubble15" parent="Bubbles" instance=ExtResource("7_luejt")]
-position = Vector2(240, 272)
+position = Vector2(240, 112)
+size = 3
+
+[node name="Bubble16" parent="Bubbles" instance=ExtResource("7_luejt")]
+position = Vector2(176, 176)
+size = 3
+
+[node name="Bubble17" parent="Bubbles" instance=ExtResource("7_luejt")]
+position = Vector2(240, 240)
 size = 3

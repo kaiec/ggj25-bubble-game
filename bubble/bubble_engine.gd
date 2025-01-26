@@ -26,11 +26,13 @@ var clicks_left := 0
 enum BubbleType {
 	BUBBLE,
 	PROJECTILE,
+	DIAGONAL,
 }
 
 var type_to_bubble = {
 	BubbleType.BUBBLE: preload("res://bubble/game_objects/bubble.tscn"),
 	BubbleType.PROJECTILE: preload("res://bubble/projectile.tscn"),
+	BubbleType.DIAGONAL: preload("res://bubble/game_objects/diagonal_bubble.tscn"),
 }
 
 var state : State:

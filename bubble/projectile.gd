@@ -1,3 +1,4 @@
+class_name Projectile
 extends BasicBubble
 
 var direction := Vector2i(1, 0)
@@ -26,6 +27,13 @@ func burst():
 	var c = cell + direction
 	var bubble = engine.get_bubble(c)
 	if bubble:
+		if bubble is Projectile:
+			bubble.queue_free()
+			# Check if we are diagonal
+			if direction.length()>1:
+				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
+			else:
+				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
 		bubble.size += 1
 	elif c in engine.area.get_used_cells():
 		var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)
