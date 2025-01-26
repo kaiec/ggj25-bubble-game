@@ -101,6 +101,7 @@ theme_override_font_sizes/font_size = 16
 text = "Credits"
 
 [node name="Quit" type="Button" parent="CenterContainer2/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Quit"

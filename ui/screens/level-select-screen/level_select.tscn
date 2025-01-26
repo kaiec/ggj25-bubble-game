@@ -10,8 +10,13 @@ font_size = 60
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -409.0
+offset_top = 24.0
+offset_right = 1291.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.629654, 0.629654)
 theme = ExtResource("1_cpj7q")
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -22,6 +27,8 @@ buttonContainer = NodePath("VBoxContainer/HFlowContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
 
 [node name="LevelSelectTitle" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(731.345, 0)
@@ -51,10 +58,11 @@ alignment = 1
 [node name="Control" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
+alignment = 1
 
 [node name="UnlockLevels" type="CheckButton" parent="VBoxContainer/Control"]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 4
 text = "Unlock all Levels"
 
 [node name="Return" type="Button" parent="VBoxContainer"]
