@@ -26,19 +26,24 @@ unique_name_in_owner = true
 
 [node name="Bubble" parent="Bubbles" instance=ExtResource("4_ydwxr")]
 position = Vector2(112, 144)
+class_type = null
 size = 3
 
 [node name="Bubble2" parent="Bubbles" instance=ExtResource("4_ydwxr")]
 position = Vector2(112, 208)
+class_type = null
 size = 3
 
 [node name="Bubble3" parent="Bubbles" instance=ExtResource("4_ydwxr")]
 position = Vector2(176, 208)
+class_type = null
 size = 3
 
 [node name="Bubble4" parent="Bubbles" instance=ExtResource("4_ydwxr")]
 position = Vector2(176, 144)
+class_type = null
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("5_dv8ly")]
 position = Vector2(240, 144)
+class_type = null
 size = 3

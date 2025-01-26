@@ -6,3 +6,4 @@
 [node name="Bubble" instance=ExtResource("1_3klcd")]
 modulate = Color(0.2448, 0.68, 0.346347, 1)
 script = ExtResource("2_r03ev")
+class_type = "Diagonal"

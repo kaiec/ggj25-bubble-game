@@ -2,6 +2,8 @@
 class_name BasicBubble
 extends Node2D
 
+@export var class_type = "BasicBubble"
+
 @onready var sprite: Sprite2D:
 	get():
 		return $Sprite

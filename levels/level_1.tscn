@@ -25,3 +25,4 @@ unique_name_in_owner = true
 
 [node name="Bubble" parent="Bubbles" groups=["goal"] instance=ExtResource("4_to7so")]
 position = Vector2(176, 176)
+class_type = null
