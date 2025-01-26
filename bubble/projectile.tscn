@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://da3qq2y08o1v"]
+[gd_scene load_steps=3 format=3 uid="uid://dyqeknjg1wu21"]
 
 [ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="1_cx55r"]
 [ext_resource type="Script" path="res://bubble/projectile.gd" id="2_tc73a"]

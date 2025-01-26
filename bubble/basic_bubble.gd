@@ -91,12 +91,14 @@ func play_pop_sound() -> AudioStreamPlayer:
 	)
 	return player
 
+
 func play_inflate_sound() -> AudioStreamPlayer:
 	var player : AudioStreamPlayer = $SFX/Bubble1 as AudioStreamPlayer
 	player.pitch_scale = randf_range(0.8, 1.2)
 	get_tree().create_timer(randf_range(0.01, 0.3)).timeout.connect(
 		func():
-			player.play()
+			if player:
+				player.play()
 	)
 	return player
 

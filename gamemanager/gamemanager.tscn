@@ -15,6 +15,7 @@ blend_mode = 4
 process_mode = 3
 script = ExtResource("1_htktm")
 max_level = 4
+bypass = true
 jump_to_level = 4
 
 [node name="BackgroundSixFortyThreeSixty" type="Sprite2D" parent="."]

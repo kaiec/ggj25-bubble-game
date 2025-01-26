@@ -34,6 +34,3 @@ func burst():
 			new_bubble.modulate = modulate
 		await new_bubble.spawn_animation
 	hide()
-
-func _process(delta: float) -> void:
-	pass

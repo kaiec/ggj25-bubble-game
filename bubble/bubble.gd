@@ -3,13 +3,19 @@
 class_name Bubble
 extends BasicBubble
 
-@onready var projectiles = {
-	$LeftProjectile: Vector2(-32, 0),
-	$RightProjectile: Vector2(32, 0),
-	$UpProjectile: Vector2(0, 32),
-	$DownProjectile: Vector2(0, -32),
-}
+var directions = [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]
 
+@onready var projectiles : Dictionary
+
+func _ready() -> void:
+	projectiles = {
+		$LeftProjectile: Vector2(directions[0] * 32),
+		$RightProjectile: Vector2(directions[1] * 32),
+		$UpProjectile: Vector2(directions[2] * 32),
+		$DownProjectile: Vector2(directions[3] * 32),
+	}
+	
+	
 func burst():
 	if Engine.is_editor_hint(): return
 	
@@ -22,7 +28,7 @@ func burst():
 		tween.tween_property(proj, "position", proj.position + projectiles[proj], animation_time)
 	await super()
 	var new_bubbles = []
-	for n in [Vector2i.UP, Vector2i.DOWN, Vector2i.RIGHT, Vector2i.LEFT]:
+	for n in directions:
 		var c = cell + n
 		var bubble = engine.get_bubble(c)
 		if bubble:
