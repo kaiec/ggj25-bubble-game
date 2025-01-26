@@ -40,12 +40,14 @@ func burst():
 			else:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)			
 		elif bubble.class_type == "BasicBubble":
+			var size = bubble.size
 			bubble.queue_free()
 			# Check if we are diagonal
 			if direction.length()>1:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
 			else:
-				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)			
+				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)	
+			bubble.size = size		
 		bubble.size += 1
 	elif c in engine.area.get_used_cells():
 		var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)
