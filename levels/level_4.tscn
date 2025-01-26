@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cs76ley7js2gf"]
+[gd_scene load_steps=9 format=4 uid="uid://cs76ley7js2gf"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_2kv4v"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_ti77l"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="4_fye01"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_qlsf7"]
 [ext_resource type="PackedScene" uid="uid://de5gcm2mubx77" path="res://bubble/game_objects/diagonal_bubble.tscn" id="7_luejt"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="8_0q05t"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -40,3 +41,11 @@ size = 3
 [node name="Bubble3" parent="Bubbles" instance=ExtResource("7_luejt")]
 position = Vector2(240, 208)
 size = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = 82.0
+offset_top = 298.0
+offset_right = 274.0
+offset_bottom = 321.0
+theme = ExtResource("8_0q05t")
+text = "Have Fun! :D"

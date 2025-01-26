@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://saadwcy1u1fp"]
+[gd_scene load_steps=8 format=4 uid="uid://saadwcy1u1fp"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_r125i"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_e3paf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_lomhd"]
 [ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="4_vgg8f"]
 [ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_yxl3t"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="7_5ella"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -40,3 +41,23 @@ size = 3
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("5_yxl3t")]
 position = Vector2(240, 176)
 size = 3
+
+[node name="Label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 238.0
+offset_right = 336.0
+offset_bottom = 292.0
+theme = ExtResource("7_5ella")
+text = "Some bubbles spawn
+new bubbles!
+Try the left one :D"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
+offset_left = 40.0
+offset_top = 170.0
+offset_right = 88.0
+offset_bottom = 193.0
+theme = ExtResource("7_5ella")
+text = ">>>"

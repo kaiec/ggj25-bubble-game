@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dcuhqysjne36s"]
+[gd_scene load_steps=7 format=4 uid="uid://dcuhqysjne36s"]
 
 [ext_resource type="Script" path="res://levels/level_1.gd" id="1_ewh2m"]
 [ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_1qs66"]
 [ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="2_gevgn"]
 [ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_m5l1w"]
 [ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="5_yi2c4"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="6_cm7rx"]
 
 [node name="Level" type="Node2D"]
 process_mode = 1
@@ -26,3 +27,21 @@ unique_name_in_owner = true
 
 [node name="BasicBubble" parent="Bubbles" groups=["goal"] instance=ExtResource("5_yi2c4")]
 position = Vector2(176, 176)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 49.0
+offset_right = 293.0
+offset_bottom = 84.0
+theme = ExtResource("6_cm7rx")
+text = "Click Bubbles
+to inflate them"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 304.0
+offset_bottom = 295.0
+theme = ExtResource("6_cm7rx")
+text = "until they pop!"
