@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://22agptjr3nnf" path="res://bubble/assets/sfx/bubble1.wav" id="13_axcae"]
 
 [node name="BasicBubble" type="Node2D"]
+modulate = Color(0.544974, 0.544974, 0.544974, 1)
 script = ExtResource("1_fownq")
 
 [node name="Sprite" type="Sprite2D" parent="."]

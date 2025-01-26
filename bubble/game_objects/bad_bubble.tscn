@@ -3,5 +3,5 @@
 [ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="1_7mebs"]
 
 [node name="BadBubble" groups=["goal", "unclickable"] instance=ExtResource("1_7mebs")]
-modulate = Color(0.231373, 0.231373, 0.231373, 1)
+modulate = Color(0.950946, 0.250175, 0.555676, 1)
 class_type = "BadBubble"

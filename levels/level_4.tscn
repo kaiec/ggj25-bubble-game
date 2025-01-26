@@ -43,9 +43,12 @@ position = Vector2(240, 208)
 size = 3
 
 [node name="Label" type="Label" parent="."]
-offset_left = 82.0
-offset_top = 298.0
-offset_right = 274.0
-offset_bottom = 321.0
+offset_left = 5.0
+offset_top = 276.0
+offset_right = 357.0
+offset_bottom = 330.0
 theme = ExtResource("8_0q05t")
-text = "Have Fun! :D"
+text = "There are more
+rules to explore.
+Have Fun! :D"
+horizontal_alignment = 1

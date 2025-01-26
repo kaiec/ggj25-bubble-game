@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="3_m71h7"]
 
 [node name="Bubble" instance=ExtResource("1_81tts")]
-modulate = Color(0.247059, 0.470588, 0.682353, 1)
+modulate = Color(0.18815, 0.453265, 0.786797, 1)
 script = ExtResource("2_ovfnn")
 class_type = "Bubble"
 

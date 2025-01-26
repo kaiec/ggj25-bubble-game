@@ -4,6 +4,6 @@
 [ext_resource type="Script" path="res://bubble/diagonal_bubble.gd" id="2_r03ev"]
 
 [node name="DiagonalBubble" instance=ExtResource("1_3klcd")]
-modulate = Color(0.2448, 0.68, 0.346347, 1)
+modulate = Color(0.180307, 0.688538, 0.304756, 1)
 script = ExtResource("2_r03ev")
 class_type = "Diagonal"
