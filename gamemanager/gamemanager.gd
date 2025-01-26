@@ -65,6 +65,7 @@ func resume():
 	pause_menu.hide()
 	pause_menu.reset()
 	get_tree().paused = false
+	current_level_node.move_to_front()
 #endregion
 
 #region Level Loading

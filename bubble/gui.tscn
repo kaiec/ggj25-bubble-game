@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckmaf8g03oxh"]
+[gd_scene load_steps=7 format=3 uid="uid://ckmaf8g03oxh"]
 
 [ext_resource type="Texture2D" uid="uid://dqbvfnx3sxax2" path="res://bubble/assets/NameTextTransparent.png" id="1_ejnqp"]
 [ext_resource type="Script" path="res://bubble/gui.gd" id="1_i6uln"]
 [ext_resource type="Texture2D" uid="uid://eypacur02wkl" path="res://bubble/assets/reset-button.png" id="2_ylaur"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="4_0bsop"]
 [ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="4_k8b8a"]
+[ext_resource type="Texture2D" uid="uid://commjbcmbnbo7" path="res://bubble/assets/pause-button.png" id="6_qqjua"]
 
 [node name="GUI" type="Node2D"]
 script = ExtResource("1_i6uln")
@@ -46,4 +47,12 @@ theme = ExtResource("4_0bsop")
 text = "x
 "
 
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 523.0
+offset_top = 183.0
+offset_right = 587.0
+offset_bottom = 247.0
+texture_normal = ExtResource("6_qqjua")
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

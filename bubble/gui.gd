@@ -31,3 +31,7 @@ func play_clicks_error():
 		tween.tween_property($Label, "modulate", Color.WHITE, animation_duration)
 		tween.tween_property($Bubble, "modulate", Color.WHITE, animation_duration)
 		await tween.finished
+
+
+func _on_texture_button_2_pressed() -> void:
+	Global.game_manager.pause()
