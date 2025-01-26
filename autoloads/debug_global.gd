@@ -40,4 +40,3 @@ func _process(_delta):
 		debug_label.text = debug_text
 		
 		update_queued = false
-		

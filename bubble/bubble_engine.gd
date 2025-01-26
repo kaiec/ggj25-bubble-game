@@ -39,7 +39,7 @@ var type_to_bubble = {
 
 var state : State:
 	set(new_state):
-		print("State change ", state, " -> ", new_state)
+		#print("State change ", state, " -> ", new_state)
 		if state:
 			state.exit_state()
 		state = new_state

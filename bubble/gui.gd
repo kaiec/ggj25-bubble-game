@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 
 
 func set_remaining_bubbles(amount : int):
-	$Label.text = str(amount) + " x "
+	$Label.text = str(amount)
 
 var animation_duration = 0.1
 func play_clicks_error():
