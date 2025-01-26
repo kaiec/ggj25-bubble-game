@@ -11,7 +11,7 @@ extends Node2D
 @export var size: int = 1:
 	set(value):
 		var old_value = size
-		print("Size changed ", size, " -> ", value, " (", self, ")")
+		#print("Size changed ", size, " -> ", value, " (", self, ")")
 		size = value
 		if sprite:
 			sprite.region_rect.position.x = (size-1)*32
@@ -29,7 +29,7 @@ var engine: BubbleEngine:
 		
 		if !engine:
 			engine = get_parent().get_parent().find_child("BubbleEngine")
-			print(engine)
+			#print(engine)
 		return engine
 
 var cell : Vector2i = Vector2i(-1, -1):
@@ -56,14 +56,14 @@ func check_burst():
 func spawn_animation():
 	if Engine.is_editor_hint(): return
 	
-	print("Spawn animation start: ", self)
+	#print("Spawn animation start: ", self)
 	play_inflate_sound()
 	scale = Vector2(0,0)
 	show()
 	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
 	tween.tween_property(self, "scale", Vector2(1,1), animation_time)
 	await tween.finished
-	print("Spawn animation finished: ", self)
+	#print("Spawn animation finished: ", self)
 	
 func burst():
 	if Engine.is_editor_hint(): return
@@ -84,7 +84,7 @@ func play_pop_sound() -> AudioStreamPlayer:
 	if is_in_group("goal"):
 		print("Goal Pop!")
 		player.pitch_scale = 0.5
-		player.volume_db = 6				
+		player.volume_db = 6
 	else:
 		player.pitch_scale = randf_range(0.8, 1.2)
 	get_tree().create_timer(randf_range(0.01, 0.05)).timeout.connect(

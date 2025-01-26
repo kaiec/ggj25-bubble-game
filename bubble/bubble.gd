@@ -23,7 +23,7 @@ func burst():
 	
 	if bursting:
 		return
-	print("Burst start at ", cell)
+	#print("Burst start at ", cell)
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
 	for proj in projectiles:
 		proj.show()
@@ -59,4 +59,4 @@ func burst():
 				new_bubble.modulate = modulate
 				new_bubbles.append(new_bubble.spawn_animation)
 	await Co.await_all(new_bubbles)
-	print("Burst ended at ", cell)
+	#print("Burst ended at ", cell)

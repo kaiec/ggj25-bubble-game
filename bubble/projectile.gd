@@ -13,9 +13,9 @@ func check_burst():
 func spawn_animation():
 	if Engine.is_editor_hint(): return # TODO not sure if needed
 	
-	print("Spawn animation start: ", self)
+	#print("Spawn animation start: ", self)
 	show()
-	print("Spawn animation finished: ", self)
+	#print("Spawn animation finished: ", self)
 	
 
 func burst():
@@ -31,7 +31,7 @@ func burst():
 	var c = cell + direction
 	var bubble = engine.get_bubble(c)
 	if bubble and not bubble in engine.to_be_burst:
-		print("Class: ", bubble.class_type)
+		#print("Class: ", bubble.class_type)
 		if bubble.class_type == "Projectile":
 			bubble.queue_free()
 			# Check if we are diagonal

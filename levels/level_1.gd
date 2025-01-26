@@ -20,6 +20,7 @@ func _ready() -> void:
 		bubble.cell = $Area.local_to_map(bubble.position)
 	$GUI.set_remaining_bubbles(max_clicks)
 	bubble_engine.click.connect(update_gui)
+	bubble_engine.false_click.connect(play_gui_error)
 
 
 func update_gui(clicks_left : int):
@@ -29,3 +30,7 @@ func update_gui(clicks_left : int):
 func _on_gui_reset_clicked() -> void:
 	print("Pressed Reset")
 	Global.game_manager._reload_current_level()
+
+
+func play_gui_error():
+	$GUI.play_clicks_error()

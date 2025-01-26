@@ -18,4 +18,16 @@ func _process(_delta: float) -> void:
 
 
 func set_remaining_bubbles(amount : int):
-	$Label.text = str(amount) + " x "
+	$Label.text = str(amount)
+
+var animation_duration = 0.1
+func play_clicks_error():
+	for i in range(3):
+		var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
+		tween.tween_property($Label, "modulate", Color.RED, animation_duration)
+		tween.tween_property($Bubble, "modulate", Color.RED, animation_duration)
+		await tween.finished
+		tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
+		tween.tween_property($Label, "modulate", Color.WHITE, animation_duration)
+		tween.tween_property($Bubble, "modulate", Color.WHITE, animation_duration)
+		await tween.finished
