@@ -19,7 +19,7 @@ max_level = 7
 [node name="BackgroundSixFortyThreeSixty" type="Sprite2D" parent="."]
 modulate = Color(0.076, 0.2242, 0.76, 0.521569)
 texture_repeat = 2
-position = Vector2(327, 176)
+position = Vector2(328, 178)
 scale = Vector2(1.05182, 1.05182)
 texture = ExtResource("2_i8bs5")
 region_rect = Rect2(0, 0, 6400, 3600)
@@ -64,7 +64,7 @@ bus = &"Music"
 
 [node name="Water" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5vf21")
-volume_db = -7.475
+volume_db = -17.721
 autoplay = true
 bus = &"Music"
 
