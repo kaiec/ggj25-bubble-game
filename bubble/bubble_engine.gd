@@ -55,7 +55,7 @@ func _ready() -> void:
 
 func get_bubble(cell):
 	for bubble in bubbles.get_children():
-		if cell == bubble.cell:
+		if cell == bubble.cell and not bubble.bursting:
 			return bubble
 
 func spawn_bubble(cell, type=BubbleType.BUBBLE) -> BasicBubble:
