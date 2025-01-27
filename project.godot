@@ -13,6 +13,8 @@ config_version=5
 config/name="Bubble Game"
 run/main_scene="res://gamemanager/gamemanager.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.196078, 0.141176, 0.345098, 1)
+boot_splash/image="res://gsk_logo.png"
 config/icon="res://icon.svg"
 
 [autoload]
