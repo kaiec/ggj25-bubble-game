@@ -54,6 +54,8 @@ func _start_game() -> void:
 
 func pause():
 	InputManager.set_is_paused(true)
+	if not OS.has_feature("web"):
+		pause_menu.show_quit_button()
 	pause_menu.move_to_front()
 	pause_menu.show()
 	get_tree().paused = true
@@ -125,6 +127,8 @@ func _show_credits() -> void:
 func _show_title_screen() -> void:
 	InputManager.set_is_in_game(false)
 	var title_screen: Node = load("res://ui/screens/title-screen/title_screen.tscn").instantiate()
+	if not OS.has_feature("web"):
+		title_screen.show_quit_button()
 	title_screen.start_game.connect(_start_game)
 	title_screen.show_credits.connect(_show_credits)
 	title_screen.show_level_select.connect(_show_level_select)

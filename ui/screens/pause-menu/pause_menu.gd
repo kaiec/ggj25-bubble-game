@@ -29,3 +29,6 @@ func _on_btn_exit_game_pressed():
 func _on_save_and_back_btn_pressed():
 	Settings.save_config()
 	reset()
+
+func show_quit_button():
+	$CenterContainer/MainPauseMenuPopup/VBoxContainer/ExitGameBtn.show()
