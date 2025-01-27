@@ -35,7 +35,7 @@ func burst():
 	for n in directions:
 		var c = cell + n
 		var bubble = engine.get_bubble(c)
-		if bubble  and not bubble in engine.to_be_burst:
+		if bubble  and not bubble in engine.to_be_burst and not bubble.bursting:
 			print("Class: ", bubble.class_type)
 			if bubble.class_type == "Projectile":
 				bubble.bursting = true

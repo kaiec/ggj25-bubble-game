@@ -59,6 +59,10 @@ func get_bubble(cell):
 			return bubble
 
 func spawn_bubble(cell, type=BubbleType.BUBBLE) -> BasicBubble:
+	var old = get_bubble(cell)
+	if old:
+		old.bursting = true
+		print("Double bubble!")
 	var bubble = type_to_bubble[type].instantiate()
 	bubbles.add_child(bubble)
 	bubble.cell = cell
