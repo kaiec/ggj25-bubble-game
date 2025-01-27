@@ -28,7 +28,9 @@ func burst():
 	for proj in projectiles:
 		proj.show()
 		tween.tween_property(proj, "position", proj.position + projectiles[proj], animation_time)
+	print("Waiting for super class burst")
 	await super()
+	print("Super done")
 	var new_bubbles = []
 	for n in directions:
 		var c = cell + n
@@ -36,7 +38,7 @@ func burst():
 		if bubble  and not bubble in engine.to_be_burst:
 			print("Class: ", bubble.class_type)
 			if bubble.class_type == "Projectile":
-				bubble.queue_free()
+				bubble.bursting = true
 				# Check if we are diagonal
 				if n.length()>1:
 					bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
@@ -44,7 +46,7 @@ func burst():
 					bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)			
 			elif bubble.class_type == "BasicBubble":
 				var size = bubble.size
-				bubble.queue_free()
+				bubble.bursting = true
 				# Check if we are diagonal
 				if n.length()>1:
 					bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
@@ -58,5 +60,7 @@ func burst():
 				new_bubble.direction = n
 				new_bubble.modulate = modulate
 				new_bubbles.append(new_bubble.spawn_animation)
+	print("Waiting for new bubbles to spawn")
 	await Co.await_all(new_bubbles)
+	print("Done")
 	#print("Burst ended at ", cell)
