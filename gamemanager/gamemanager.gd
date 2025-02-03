@@ -11,8 +11,9 @@ class_name GameManager
 @export var multiple_levels: bool = true
 ## The number of the highest level. For 1 Level this is 1
 @export var max_level: int = 0
+@export var level_world = "level"
 ## Formatable Strig pointing to
-@export var level_location = "res://levels/level_%s.tscn"
+@export var level_location = "res://levels/%s_%s.tscn"
 
 # Quick checking of a level
 @export var bypass : bool = false
@@ -95,7 +96,7 @@ func _next_level() -> void:
 func _show_level(level_nr: int) -> void:
 	InputManager.set_is_in_game(true)
 	level = level_nr
-	var next_level = load(level_location % str(level)).instantiate()
+	var next_level = load(level_location % [level_world, str(level)]).instantiate()
 	if next_level.has_signal("win"):
 		next_level.win.connect(_next_level)
 	if next_level.has_signal("reset"):

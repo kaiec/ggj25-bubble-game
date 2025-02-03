@@ -1,11 +1,30 @@
 class_name Projectile
 extends BasicBubble
 
+var animation_timer : Timer
+var animation_start_pos : Vector2
+var animation_end_pos : Vector2
+
 var direction := Vector2i(1, 0)
+var wave_dir = 1
 
 func _ready() -> void:
 	super()
 	class_type = "Projectile"
+	animation_timer = Timer.new()
+	add_child(animation_timer)
+	
+
+func _process(delta: float) -> void:
+	if animation_timer.is_stopped():
+		return
+	var distance = animation_end_pos - animation_start_pos
+	var rel = 1 - (animation_timer.time_left / animation_timer.wait_time)
+	var orth = distance.orthogonal().normalized()
+	position = animation_start_pos + distance * rel + orth * sin(rel * PI) * 5 * wave_dir
+	
+	
+		
 
 func check_burst():
 	return true
@@ -26,11 +45,15 @@ func burst():
 		return
 	bursting = true
 	remove_from_group("goal")
-	var tween = create_tween().set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "position", position + 32*Vector2(direction), 0.3)
-	print("awaiting tween")
-	await tween.finished
-	print("tween done")
+	#var tween = create_tween().set_ease(Tween.EASE_OUT)
+	#tween.tween_property(self, "position", position + 32*Vector2(direction), 0.3)
+	#print("awaiting tween")
+	#await tween.finished
+	#print("tween done")
+	animation_start_pos = position
+	animation_end_pos = position + 32 * Vector2(direction)
+	animation_timer.start(0.3)
+	await animation_timer.timeout
 	var c = cell + direction
 	var bubble = engine.get_bubble(c)
 	if bubble and not bubble in engine.to_be_burst and not bubble.bursting:
@@ -57,6 +80,7 @@ func burst():
 		if new_bubble:
 			new_bubble.direction = direction
 			new_bubble.modulate = modulate
+			new_bubble.wave_dir = -wave_dir
 		print("awaiting spawning")
 		await new_bubble.spawn_animation
 		print("spawning done")

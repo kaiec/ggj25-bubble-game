@@ -60,9 +60,9 @@ func get_bubble(cell):
 
 func spawn_bubble(cell, type=BubbleType.BUBBLE) -> BasicBubble:
 	var old = get_bubble(cell)
-	if old:
-		old.bursting = true
-		print("Double bubble!")
+	# if old:
+		# old.bursting = true
+		# print("Double bubble!")
 	var bubble = type_to_bubble[type].instantiate()
 	bubbles.add_child(bubble)
 	bubble.cell = cell
