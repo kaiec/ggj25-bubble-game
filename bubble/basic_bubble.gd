@@ -13,10 +13,7 @@ extends Node2D
 		var old_value = size
 		#print("Size changed ", size, " -> ", value, " (", self, ")")
 		size = value
-		if sprite:
-			sprite.region_rect.position.x = (size-1)*32
-			if value > old_value and is_inside_tree():
-				play_inflate_sound()
+		_update_sprite(old_value)
 
 var bursting := false
 var anim_offset := 0.0
@@ -78,6 +75,14 @@ func burst():
 	await Co.await_all([tween.finished, play_pop_sound])
 	hide()
 
+
+func _update_sprite(old_size):
+	if sprite:
+		sprite.region_rect.position.x = (size-1)*32
+		if size > old_size and is_inside_tree():
+			play_inflate_sound()
+
+
 func play_pop_sound() -> void:
 	var player : AudioStreamPlayer = $PopSounds.get_children().pick_random() as AudioStreamPlayer
 	if is_in_group("goal"):
@@ -92,6 +97,8 @@ func play_pop_sound() -> void:
 
 
 func play_inflate_sound() -> AudioStreamPlayer:
+	if Engine.is_editor_hint(): return
+	
 	var player : AudioStreamPlayer = $SFX/Bubble1 as AudioStreamPlayer
 	player.pitch_scale = randf_range(0.8, 1.2)
 	get_tree().create_timer(randf_range(0.01, 0.3)).timeout.connect(

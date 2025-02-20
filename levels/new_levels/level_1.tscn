@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=4 uid="uid://ika3oem5ioml"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_rfk4t"]
+[ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_corou"]
+[ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_l136c"]
+[ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="4_mhy7i"]
+[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="5_gr8tq"]
+[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="6_qjr5y"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_rfk4t")
+max_clicks = 3
+
+[node name="Area" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAA=")
+tile_set = ExtResource("2_corou")
+
+[node name="GUI" parent="." instance=ExtResource("3_l136c")]
+
+[node name="BubbleEngine" parent="." node_paths=PackedStringArray("area") instance=ExtResource("4_mhy7i")]
+unique_name_in_owner = true
+area = NodePath("../Area")
+
+[node name="Bubbles" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="BasicBubble" parent="Bubbles" groups=["goal"] instance=ExtResource("5_gr8tq")]
+position = Vector2(176, 176)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 49.0
+offset_right = 293.0
+offset_bottom = 84.0
+theme = ExtResource("6_qjr5y")
+text = "Click Bubbles
+to inflate them"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 304.0
+offset_bottom = 295.0
+theme = ExtResource("6_qjr5y")
+text = "until they pop!"

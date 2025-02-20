@@ -5,3 +5,7 @@
 
 [node name="Projectile" instance=ExtResource("1_cx55r")]
 script = ExtResource("2_tc73a")
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(1.2, 1.2)
+region_rect = Rect2(78, 33, 5, 5)

@@ -14,9 +14,9 @@ blend_mode = 4
 [node name="Gamemanager" type="Node"]
 process_mode = 3
 script = ExtResource("1_htktm")
-max_level = 2
-level_world = "kai"
-bypass = true
+max_level = 11
+level_location = "res://levels/new_levels/%s_%s.tscn"
+jump_to_level = 8
 
 [node name="BackgroundSixFortyThreeSixty" type="Sprite2D" parent="."]
 modulate = Color(0.076, 0.2242, 0.76, 0.521569)

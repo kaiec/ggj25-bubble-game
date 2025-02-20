@@ -23,8 +23,10 @@ func _process(delta: float) -> void:
 	var orth = distance.orthogonal().normalized()
 	position = animation_start_pos + distance * rel + orth * sin(rel * PI) * 5 * wave_dir
 	
-	
-		
+
+func _update_sprite(old_size):
+	return
+
 
 func check_burst():
 	return true
@@ -52,7 +54,7 @@ func burst():
 	#print("tween done")
 	animation_start_pos = position
 	animation_end_pos = position + 32 * Vector2(direction)
-	animation_timer.start(0.3)
+	animation_timer.start(animation_time)
 	await animation_timer.timeout
 	var c = cell + direction
 	var bubble = engine.get_bubble(c)
@@ -64,7 +66,7 @@ func burst():
 			if direction.length()>1:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
 			else:
-				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)			
+				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
 		elif bubble.class_type == "BasicBubble":
 			var size = bubble.size
 			bubble.bursting = true
@@ -72,8 +74,8 @@ func burst():
 			if direction.length()>1:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
 			else:
-				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)	
-			bubble.size = size		
+				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
+			bubble.size = size
 		bubble.size += 1
 	elif c in engine.area.get_used_cells():
 		var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)

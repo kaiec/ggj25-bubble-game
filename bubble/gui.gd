@@ -1,3 +1,5 @@
+@tool
+
 class_name BubbleGUI
 extends Node2D
 
@@ -9,10 +11,14 @@ signal reset_clicked
 
 
 func _on_texture_button_pressed() -> void:
+	if Engine.is_editor_hint(): return
+	
 	reset_clicked.emit()
 
 
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
+	
 	var time : float = float(Time.get_ticks_msec()) / 200
 	position.y = original_pos.y + 2 * sin(time + anim_offset)
 
@@ -34,4 +40,6 @@ func play_clicks_error():
 
 
 func _on_texture_button_2_pressed() -> void:
+	if Engine.is_editor_hint(): return
+	
 	Global.game_manager.pause()
