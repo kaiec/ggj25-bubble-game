@@ -7,7 +7,9 @@ signal win
 @onready var bubble_engine: BubbleEngine = $BubbleEngine
 @onready var gui: BubbleGUI:
 	get():
-		return $GUI
+		if has_node("GUI"):
+			return $GUI
+		return null
 
 @export var max_clicks: int = -1:
 	set(value):

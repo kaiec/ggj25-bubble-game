@@ -59,6 +59,7 @@ func get_bubble(cell):
 			return bubble
 
 func spawn_bubble(cell, type=BubbleType.BUBBLE) -> BasicBubble:
+	@warning_ignore("unused_variable")
 	var old = get_bubble(cell)
 	# if old:
 		# old.bursting = true

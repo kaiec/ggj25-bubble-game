@@ -15,7 +15,7 @@ func _ready() -> void:
 	add_child(animation_timer)
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if animation_timer.is_stopped():
 		return
 	var distance = animation_end_pos - animation_start_pos
@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 	position = animation_start_pos + distance * rel + orth * sin(rel * PI) * 5 * wave_dir
 	
 
-func _update_sprite(old_size):
+func _update_sprite(_old_size):
 	return
 
 
@@ -68,14 +68,14 @@ func burst():
 			else:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
 		elif bubble.class_type == "BasicBubble":
-			var size = bubble.size
+			var bubble_size = bubble.size
 			bubble.bursting = true
 			# Check if we are diagonal
 			if direction.length()>1:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.DIAGONAL)
 			else:
 				bubble = engine.spawn_bubble(c, engine.BubbleType.BUBBLE)
-			bubble.size = size
+			bubble.size = bubble_size
 		bubble.size += 1
 	elif c in engine.area.get_used_cells():
 		var new_bubble = engine.spawn_bubble(c, engine.BubbleType.PROJECTILE)
