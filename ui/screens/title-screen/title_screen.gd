@@ -27,7 +27,7 @@ func _on_quit_pressed():
 	queue_free()
 
 func show_quit_button():
-	$CenterContainer2/VBoxContainer/Quit.show()
+	$CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/Quit.show()
 
 func show_levels(b: bool) -> void:
-	$CenterContainer2/VBoxContainer/LevelSelect.visible = b
+	$CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/LevelSelect.visible = b

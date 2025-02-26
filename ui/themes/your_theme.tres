@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://hheneshfv1b2"]
 
 [ext_resource type="Texture2D" uid="uid://b23e4kqj4o6dv" path="res://textures/Revert.svg" id="1_r1020"]
-[ext_resource type="FontFile" uid="uid://cbt6png2tnpyv" path="res://bubble/assets/fonts/PressStart2P-Regular.ttf" id="2_xpvrg"]
+[ext_resource type="FontFile" uid="uid://exowq3de2xiw" path="res://bubble/assets/fonts/Tilt_Neon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf" id="2_dpeau"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu70a"]
 content_margin_left = 10.0
@@ -17,7 +17,11 @@ content_margin_bottom = 5.0
 bg_color = Color(0.19, 0.19, 0.19, 1)
 
 [resource]
-default_font = ExtResource("2_xpvrg")
+default_font = ExtResource("2_dpeau")
+default_font_size = 28
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.04, 1.5, 0.075, 0.925)
+Label/constants/outline_size = 3
 MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8

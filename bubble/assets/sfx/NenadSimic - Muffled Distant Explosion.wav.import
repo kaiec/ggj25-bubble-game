@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2s0keosjfx0w"
+path="res://.godot/imported/NenadSimic - Muffled Distant Explosion.wav-74d0baecb31ed57c6216d68bf5bcab03.sample"
+
+[deps]
+
+source_file="res://bubble/assets/sfx/NenadSimic - Muffled Distant Explosion.wav"
+dest_files=["res://.godot/imported/NenadSimic - Muffled Distant Explosion.wav-74d0baecb31ed57c6216d68bf5bcab03.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

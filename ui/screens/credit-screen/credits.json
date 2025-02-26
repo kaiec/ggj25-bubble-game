@@ -10,13 +10,13 @@
 		"url": "https://github.com/Godot-Stammtisch-Karlsruhe/godot-game-template"
 	},
 	{
-		"name": "Water sound (Background)",
-		"descriptor": "by erxer1 (CC-BY 3.0)",
-		"url": "https://opengameart.org/content/water-flowing-sound",
+		"name": "Stasis (music for space)",
+		"descriptor": "by SondreDrakensson (CC-BY-4.0)",
+		"url": "https://freesound.org/s/547029/"
 	},
 	{
-		"name": "Forest (Background Music)",
-		"descriptor": "by syncopika (CC-BY 3.0)",
-		"url": "https://opengameart.org/content/forest",
+		"name": "Sci-Fi Laser Fire SFX",
+		"descriptor": "by K.L.Jonasson, Winnipeg, Canada. Triki Minut Interactive www.trikiminut.com",
+		"url": "https://opengameart.org/content/sci-fi-laser-fire-sfx"
 	}
 ]

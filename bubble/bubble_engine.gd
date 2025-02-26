@@ -95,7 +95,7 @@ func select_bubble(cell) -> bool:
 func set_cursor(cell):
 	if cell in area.get_used_cells():
 		cursor.show()
-		cursor.global_position = area.map_to_local(cell)
+		cursor.position = area.map_to_local(cell)
 	else:
 		cursor.hide()
 

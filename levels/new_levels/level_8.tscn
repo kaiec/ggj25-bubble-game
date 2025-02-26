@@ -14,6 +14,7 @@ script = ExtResource("1_4neep")
 max_clicks = 4
 
 [node name="Area" type="TileMapLayer" parent="."]
+position = Vector2(350, -50)
 tile_map_data = PackedByteArray("AAADAAMAAAABAAAAAAADAAQAAAABAAAAAAAFAAUAAAABAAAAAAAFAAQAAAABAAAAAAAFAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAYAAAABAAAAAAAHAAYAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAGAAYAAAABAAAAAAADAAUAAAABAAAAAAAEAAUAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAA=")
 tile_set = ExtResource("2_4na5q")
 
@@ -25,6 +26,7 @@ area = NodePath("../Area")
 
 [node name="Bubbles" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(350, -50)
 
 [node name="Bubble" parent="Bubbles" instance=ExtResource("5_tg0xm")]
 position = Vector2(350, 350)

@@ -14,6 +14,7 @@ max_clicks = 3
 
 [node name="Area" type="TileMapLayer" parent="."]
 modulate = Color(0.11, 0.0264, 0.11, 0.788235)
+position = Vector2(400, 0)
 tile_map_data = PackedByteArray("AAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAA=")
 tile_set = ExtResource("2_corou")
 
@@ -25,24 +26,29 @@ area = NodePath("../Area")
 
 [node name="Bubbles" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(400, 0)
 
 [node name="BasicBubble" parent="Bubbles" groups=["goal"] instance=ExtResource("5_gr8tq")]
 position = Vector2(550, 550)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 250.0
-offset_top = 250.0
-offset_right = 474.0
-offset_bottom = 285.0
+offset_left = 450.0
+offset_top = 218.675
+offset_right = 709.0
+offset_bottom = 323.675
+rotation = -0.268365
 theme = ExtResource("6_qjr5y")
+theme_override_font_sizes/font_size = 40
 text = "Click Bubbles
 to inflate them"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 250.0
-offset_top = 750.0
-offset_right = 490.0
-offset_bottom = 773.0
+offset_left = 550.0
+offset_top = 318.675
+offset_right = 802.0
+offset_bottom = 369.675
+rotation = -0.106134
 theme = ExtResource("6_qjr5y")
+theme_override_font_sizes/font_size = 40
 text = "until they pop!"

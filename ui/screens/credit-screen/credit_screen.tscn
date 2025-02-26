@@ -5,12 +5,10 @@
 [ext_resource type="FontFile" uid="uid://cbt6png2tnpyv" path="res://bubble/assets/fonts/PressStart2P-Regular.ttf" id="3_osuxe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mon07"]
-font = ExtResource("3_osuxe")
-font_size = 54
+font_size = 100
 
 [sub_resource type="LabelSettings" id="LabelSettings_cutkl"]
-font = ExtResource("3_osuxe")
-font_size = 18
+font_size = 36
 
 [sub_resource type="LabelSettings" id="LabelSettings_2puqi"]
 font = ExtResource("3_osuxe")
@@ -63,7 +61,7 @@ layout_mode = 2
 [node name="LabelCreatedBy" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Created by
-kaiec, [Tyr|x], mjod"
+kaiec and [Tyr|x]"
 label_settings = SubResource("LabelSettings_cutkl")
 horizontal_alignment = 1
 
@@ -72,7 +70,7 @@ layout_mode = 2
 text = "
 
 Special thanks to:
-Flora (Supporting Pixel Artist)"
+mjod (Co-Creator of the Jam Version)"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -88,6 +86,7 @@ label_settings = SubResource("LabelSettings_2puqi")
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]

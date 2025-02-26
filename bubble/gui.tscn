@@ -1,16 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckmaf8g03oxh"]
+[gd_scene load_steps=9 format=3 uid="uid://ckmaf8g03oxh"]
 
 [ext_resource type="Texture2D" uid="uid://dqbvfnx3sxax2" path="res://bubble/assets/NameTextTransparent.png" id="1_ejnqp"]
 [ext_resource type="Script" path="res://bubble/gui.gd" id="1_i6uln"]
 [ext_resource type="Texture2D" uid="uid://eypacur02wkl" path="res://bubble/assets/reset-button.png" id="2_ylaur"]
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="4_0bsop"]
-[ext_resource type="Texture2D" uid="uid://bfmnb6b5tu2kl" path="res://bubble/assets/bubbleSprites.png" id="4_k8b8a"]
+[ext_resource type="Texture2D" uid="uid://cfiydep8yupbb" path="res://bubble/assets/atom/electron100.png" id="5_ir8k4"]
 [ext_resource type="Texture2D" uid="uid://commjbcmbnbo7" path="res://bubble/assets/pause-button.png" id="6_qqjua"]
+[ext_resource type="FontFile" uid="uid://exowq3de2xiw" path="res://bubble/assets/fonts/Tilt_Neon/TiltNeon-Regular-VariableFont_XROT,YROT.ttf" id="7_y5e0w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_53xj4"]
+font = ExtResource("7_y5e0w")
+font_size = 100
+font_color = Color(1.2, 0.68, 0.68, 1)
 
 [node name="GUI" type="Node2D"]
 script = ExtResource("1_i6uln")
 
 [node name="NameTextTransparent" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1716, 253.242)
 rotation = 0.416747
 scale = Vector2(0.337798, 0.337798)
@@ -34,9 +41,10 @@ horizontal_alignment = 2
 
 [node name="Bubble" type="Sprite2D" parent="."]
 position = Vector2(1656, 760)
-texture = ExtResource("4_k8b8a")
+scale = Vector2(3, 3)
+texture = ExtResource("5_ir8k4")
 region_enabled = true
-region_rect = Rect2(64, 0, 32, 32)
+region_rect = Rect2(11, 20, 65, 46)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 1620.0
@@ -53,6 +61,17 @@ offset_top = 650.0
 offset_right = 1791.0
 offset_bottom = 714.0
 texture_normal = ExtResource("6_qqjua")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1550.0
+offset_top = 50.0
+offset_right = 2071.0
+offset_bottom = 437.0
+rotation = 0.265052
+text = "REACT
+ORIDD
+LECTIC"
+label_settings = SubResource("LabelSettings_53xj4")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -16,6 +16,7 @@ max_clicks = 3
 
 [node name="Area" type="TileMapLayer" parent="."]
 modulate = Color(0.109804, 0.027451, 0.109804, 0.788235)
+position = Vector2(250, 50)
 tile_map_data = PackedByteArray("AAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAHAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAMAAAABAAAAAAAFAAUAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAQAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAJAAQAAAABAAAAAAAIAAMAAAABAAAAAAAIAAUAAAABAAAAAAA=")
 tile_set = ExtResource("2_8rpmg")
 
@@ -27,6 +28,7 @@ area = NodePath("../Area")
 
 [node name="Bubbles" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(250, 50)
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("6_keyb0")]
 position = Vector2(850, 450)
@@ -41,11 +43,13 @@ position = Vector2(350, 450)
 size = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = 50.0
+offset_left = 150.0
 offset_top = 150.0
-offset_right = 434.0
-offset_bottom = 204.0
+offset_right = 534.0
+offset_bottom = 309.0
+rotation = -0.203001
 theme = ExtResource("7_x4cfg")
+theme_override_font_sizes/font_size = 40
 text = "You have limited
 clicks to pop all
 the red bubbles!"

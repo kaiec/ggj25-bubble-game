@@ -33,6 +33,7 @@ func _ready() -> void:
 	bubble_engine.click.connect(update_gui)
 	bubble_engine.false_click.connect(play_gui_error)
 	$Area.modulate = Color.html("#1c071cc9")
+	bubble_engine.position = $Area.position
 
 
 func update_gui(clicks_left : int):

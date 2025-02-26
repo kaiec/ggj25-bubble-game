@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mwwd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p0wxk"]
-font_size = 12
+font_size = 20
 
 [node name="Credit" type="VBoxContainer"]
 offset_right = 40.0
@@ -18,7 +18,7 @@ script = ExtResource("1_ukcj5")
 [node name="CreditButton" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2mwwd")
 flat = true
 
