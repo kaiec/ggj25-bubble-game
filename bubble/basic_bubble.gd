@@ -4,6 +4,12 @@ extends Node2D
 
 @export var class_type = "BasicBubble"
 
+const SPRITESHEET_1 = preload("res://bubble/assets/atom/render/spritesheet-1.png")
+const SPRITESHEET_2 = preload("res://bubble/assets/atom/render/spritesheet-2.png")
+const SPRITESHEET_3 = preload("res://bubble/assets/atom/render/spritesheet-3.png")
+
+const spritesheets = [SPRITESHEET_1, SPRITESHEET_2, SPRITESHEET_3]
+
 @onready var sprite: Sprite2D:
 	get():
 		return $Sprite
@@ -18,7 +24,7 @@ extends Node2D
 var bursting := false
 var anim_offset := 0.0
 
-var animation_time = 0.3
+var animation_time = 0.6
 
 var engine: BubbleEngine:
 	get():
@@ -78,7 +84,7 @@ func burst():
 
 func _update_sprite(old_size):
 	if sprite:
-		sprite.region_rect.position.x = (size-1)*32
+		sprite.texture = spritesheets[min(size, len(spritesheets)) - 1]
 		if size > old_size and is_inside_tree():
 			play_inflate_sound()
 

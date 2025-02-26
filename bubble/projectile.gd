@@ -13,6 +13,9 @@ func _ready() -> void:
 	class_type = "Projectile"
 	animation_timer = Timer.new()
 	add_child(animation_timer)
+	$Sprite.texture = preload("res://bubble/assets/atom/electron100.png")
+	$Sprite.hframes = 1
+	$Sprite/AnimationPlayer.stop()
 	
 
 func _process(_delta: float) -> void:
@@ -21,7 +24,7 @@ func _process(_delta: float) -> void:
 	var distance = animation_end_pos - animation_start_pos
 	var rel = 1 - (animation_timer.time_left / animation_timer.wait_time)
 	var orth = distance.orthogonal().normalized()
-	position = animation_start_pos + distance * rel + orth * sin(rel * PI) * 5 * wave_dir
+	position = animation_start_pos + distance * rel + orth * sin(rel * PI) * 20 * wave_dir
 	
 
 func _update_sprite(_old_size):
@@ -53,7 +56,7 @@ func burst():
 	#await tween.finished
 	#print("tween done")
 	animation_start_pos = position
-	animation_end_pos = position + 32 * Vector2(direction)
+	animation_end_pos = position + 100 * Vector2(direction)
 	animation_timer.start(animation_time)
 	await animation_timer.timeout
 	var c = cell + direction
