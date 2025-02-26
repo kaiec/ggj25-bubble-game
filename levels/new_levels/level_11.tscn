@@ -28,29 +28,29 @@ area = NodePath("../Area")
 unique_name_in_owner = true
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("7_grunq")]
-position = Vector2(272, 112)
+position = Vector2(850, 350)
 size = 3
 
 [node name="BasicBubble" parent="Bubbles" instance=ExtResource("6_8208o")]
-position = Vector2(272, 272)
+position = Vector2(850, 850)
 size = 2
 
 [node name="Bubble4" parent="Bubbles" instance=ExtResource("5_tg0xm")]
-position = Vector2(176, 208)
+position = Vector2(550, 650)
 size = 3
 
 [node name="BasicBubble2" parent="Bubbles" instance=ExtResource("6_8208o")]
-position = Vector2(176, 240)
+position = Vector2(550, 750)
 size = 3
 
 [node name="Bubble" parent="Bubbles" instance=ExtResource("8_mhn1p")]
-position = Vector2(112, 208)
+position = Vector2(350, 650)
 size = 3
 
 [node name="Bubble2" parent="Bubbles" instance=ExtResource("8_mhn1p")]
-position = Vector2(240, 208)
+position = Vector2(750, 650)
 size = 3
 
 [node name="Bubble3" parent="Bubbles" instance=ExtResource("8_mhn1p")]
-position = Vector2(240, 240)
+position = Vector2(750, 750)
 size = 3

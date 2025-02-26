@@ -1,24 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgu0vbr50x7di"]
+[gd_scene load_steps=10 format=3 uid="uid://cgu0vbr50x7di"]
 
 [ext_resource type="Script" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
+[ext_resource type="Texture2D" uid="uid://drbgduhudf0u7" path="res://bubble/assets/Starsetcolorful.png" id="2_7834v"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
 [ext_resource type="Texture2D" uid="uid://bc18q8uq3ov86" path="res://bubble/assets/BackgroundGrayscale.jpeg" id="2_i8bs5"]
 [ext_resource type="Environment" uid="uid://bhb4ckqipjvu3" path="res://other/main_environment.tres" id="2_v1n10"]
-[ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="3_8qpx4"]
 [ext_resource type="AudioStream" uid="uid://d26781t8hwomq" path="res://bubble/assets/music/forest.ogg" id="5_dn5ay"]
 [ext_resource type="AudioStream" uid="uid://bvdbvkguf1igw" path="res://bubble/assets/music/water.ogg" id="6_5vf21"]
+[ext_resource type="PackedScene" uid="uid://ddc3qfst7mbgc" path="res://ui/screens/title-screen/title_screen.tscn" id="6_pscip"]
+[ext_resource type="PackedScene" uid="uid://fd3xmnc047tm" path="res://ui/screens/credit-screen/credit_screen.tscn" id="7_oye0i"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w0vat"]
-blend_mode = 4
-
-[node name="Gamemanager" type="Node"]
+[node name="Gamemanager" type="Node2D"]
 process_mode = 3
+light_mask = 0
 script = ExtResource("1_htktm")
 max_level = 11
 level_location = "res://levels/new_levels/%s_%s.tscn"
-jump_to_level = 8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_v1n10")
+
+[node name="Starsetcolorful" type="Sprite2D" parent="."]
+position = Vector2(-474, -269)
+scale = Vector2(1.25254, 1.25254)
+texture = ExtResource("2_7834v")
+centered = false
 
 [node name="BackgroundSixFortyThreeSixty" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.076, 0.2242, 0.76, 0.521569)
 texture_repeat = 2
 position = Vector2(328, 178)
@@ -26,38 +35,37 @@ scale = Vector2(1.05182, 1.05182)
 texture = ExtResource("2_i8bs5")
 region_rect = Rect2(0, 0, 6400, 3600)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_v1n10")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-texture_filter = 1
-material = SubResource("CanvasItemMaterial_w0vat")
+[node name="MenuLayer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_8qpx4")
-stretch = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
 
-[node name="MenuLayer" type="SubViewport" parent="SubViewportContainer"]
-disable_3d = true
-transparent_bg = true
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-size = Vector2i(640, 360)
-render_target_update_mode = 4
-
-[node name="DebugLabel" type="Label" parent="SubViewportContainer/MenuLayer"]
+[node name="DebugLabel" type="Label" parent="MenuLayer"]
 visible = false
-offset_left = 23.0
-offset_top = 16.0
-offset_right = 600.0
-offset_bottom = 308.0
+layout_mode = 2
 
-[node name="PauseMenu" parent="SubViewportContainer/MenuLayer" instance=ExtResource("2_b2lg8")]
+[node name="PauseMenu" parent="MenuLayer" instance=ExtResource("2_b2lg8")]
 visible = false
+layout_mode = 2
 theme = null
+
+[node name="TitleScreen" parent="MenuLayer" instance=ExtResource("6_pscip")]
+visible = false
+layout_mode = 2
+
+[node name="CreditScreen" parent="MenuLayer" instance=ExtResource("7_oye0i")]
+visible = false
+layout_mode = 2
 
 [node name="Forest" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_dn5ay")
@@ -70,6 +78,6 @@ volume_db = -17.721
 autoplay = true
 bus = &"Music"
 
-[connection signal="continue_btn_pressed" from="SubViewportContainer/MenuLayer/PauseMenu" to="." method="resume"]
-[connection signal="exit_game_btn_pressed" from="SubViewportContainer/MenuLayer/PauseMenu" to="." method="_quit_game"]
-[connection signal="exit_to_main_menu_btn_pressed" from="SubViewportContainer/MenuLayer/PauseMenu" to="." method="_return_to_title_screen"]
+[connection signal="continue_btn_pressed" from="MenuLayer/PauseMenu" to="." method="resume"]
+[connection signal="exit_game_btn_pressed" from="MenuLayer/PauseMenu" to="." method="_quit_game"]
+[connection signal="exit_to_main_menu_btn_pressed" from="MenuLayer/PauseMenu" to="." method="_return_to_title_screen"]

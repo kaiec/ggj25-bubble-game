@@ -18,8 +18,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_qt2rq")
 script = ExtResource("1_rm86k")
 
@@ -69,10 +73,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 170.0
-offset_right = 4.0
-offset_bottom = -19.0
+offset_left = -146.0
+offset_top = 47.0
+offset_right = 154.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -113,13 +117,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -76.5
-offset_top = -25.0
-offset_right = 76.5
-offset_bottom = -2.0
+offset_left = -26.0
+offset_top = -15.0
+offset_right = 127.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Jam Version"
+text = "Atomic
+Post Jam 
+Version"
 label_settings = SubResource("LabelSettings_wly7t")
 horizontal_alignment = 1
 

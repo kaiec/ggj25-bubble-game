@@ -13,6 +13,7 @@ script = ExtResource("1_rfk4t")
 max_clicks = 3
 
 [node name="Area" type="TileMapLayer" parent="."]
+modulate = Color(0.11, 0.0264, 0.11, 0.788235)
 tile_map_data = PackedByteArray("AAAEAAUAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAA=")
 tile_set = ExtResource("2_corou")
 
@@ -26,22 +27,22 @@ area = NodePath("../Area")
 unique_name_in_owner = true
 
 [node name="BasicBubble" parent="Bubbles" groups=["goal"] instance=ExtResource("5_gr8tq")]
-position = Vector2(176, 176)
+position = Vector2(550, 550)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 69.0
-offset_top = 49.0
-offset_right = 293.0
-offset_bottom = 84.0
+offset_left = 250.0
+offset_top = 250.0
+offset_right = 474.0
+offset_bottom = 285.0
 theme = ExtResource("6_qjr5y")
 text = "Click Bubbles
 to inflate them"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 64.0
-offset_top = 272.0
-offset_right = 304.0
-offset_bottom = 295.0
+offset_left = 250.0
+offset_top = 750.0
+offset_right = 490.0
+offset_bottom = 773.0
 theme = ExtResource("6_qjr5y")
 text = "until they pop!"

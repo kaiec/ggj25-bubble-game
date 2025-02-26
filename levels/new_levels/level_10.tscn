@@ -26,17 +26,17 @@ area = NodePath("../Area")
 unique_name_in_owner = true
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("6_537aj")]
-position = Vector2(176, 304)
+position = Vector2(550, 950)
 size = 3
 
 [node name="DiagonalBubble" parent="Bubbles" instance=ExtResource("6_crcoj")]
-position = Vector2(176, 48)
+position = Vector2(550, 150)
 size = 3
 
 [node name="DiagonalBubble2" parent="Bubbles" instance=ExtResource("6_crcoj")]
-position = Vector2(112, 112)
+position = Vector2(350, 350)
 size = 2
 
 [node name="DiagonalBubble3" parent="Bubbles" instance=ExtResource("6_crcoj")]
-position = Vector2(240, 112)
+position = Vector2(750, 350)
 size = 3

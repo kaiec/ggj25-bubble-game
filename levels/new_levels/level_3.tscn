@@ -15,6 +15,7 @@ script = ExtResource("1_iqgs2")
 max_clicks = 3
 
 [node name="Area" type="TileMapLayer" parent="."]
+modulate = Color(0.109804, 0.027451, 0.109804, 0.788235)
 tile_map_data = PackedByteArray("AAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAHAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAMAAAABAAAAAAAFAAUAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAQAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAJAAQAAAABAAAAAAAIAAMAAAABAAAAAAAIAAUAAAABAAAAAAA=")
 tile_set = ExtResource("2_8rpmg")
 
@@ -28,22 +29,22 @@ area = NodePath("../Area")
 unique_name_in_owner = true
 
 [node name="BadBubble" parent="Bubbles" instance=ExtResource("6_keyb0")]
-position = Vector2(272, 144)
+position = Vector2(850, 450)
 size = 2
 
 [node name="Bubble" parent="Bubbles" instance=ExtResource("5_vxobl")]
-position = Vector2(176, 144)
+position = Vector2(550, 450)
 size = 2
 
 [node name="BasicBubble" parent="Bubbles" instance=ExtResource("7_vpx5p")]
-position = Vector2(112, 144)
+position = Vector2(350, 450)
 size = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1.0
-offset_top = 277.0
-offset_right = 385.0
-offset_bottom = 331.0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 434.0
+offset_bottom = 204.0
 theme = ExtResource("7_x4cfg")
 text = "You have limited
 clicks to pop all

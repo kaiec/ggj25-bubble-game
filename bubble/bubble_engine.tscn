@@ -32,4 +32,4 @@ script = ExtResource("6_ucinb")
 modulate = Color(0.28, 1, 0.376, 1)
 texture = ExtResource("3_eeh7o")
 region_enabled = true
-region_rect = Rect2(0, 32, 32, 32)
+region_rect = Rect2(0, 100, 100, 100)

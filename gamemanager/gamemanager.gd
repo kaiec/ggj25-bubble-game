@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name GameManager
 
 ## Use this when you have only one level
@@ -19,8 +19,8 @@ class_name GameManager
 @export var bypass : bool = false
 @export var jump_to_level : int = 1
 
-@onready var pause_menu: Control = $SubViewportContainer/MenuLayer/PauseMenu
-@onready var menu_layer: Viewport = $SubViewportContainer/MenuLayer
+@onready var pause_menu: Control = $MenuLayer/PauseMenu
+@onready var menu_layer: Control = $MenuLayer
 
 var level = 0
 var completed_levels: Array[bool] = []
@@ -28,7 +28,7 @@ var current_level_node: Node
 
 func _ready() -> void:
 	Global.set_game_manager(self)
-	DebugGlobal.debug_label = $SubViewportContainer/MenuLayer/DebugLabel
+	DebugGlobal.debug_label = $MenuLayer/DebugLabel
 	for i in range(max_level): 
 		completed_levels.append(false)
 	# Load settingsz
@@ -60,7 +60,6 @@ func pause():
 	pause_menu.move_to_front()
 	pause_menu.show()
 	get_tree().paused = true
-	$SubViewportContainer.move_to_front()
 	
 func resume():
 	InputManager.set_is_paused(false)
@@ -118,7 +117,7 @@ func _show_win_screen() -> void:
 	print("You win the Game")
 	var win_screen: Control = load("res://ui/screens/win-screen/win_screen.tscn").instantiate()
 	win_screen.tree_exited.connect(_show_title_screen)
-	add_child(win_screen)
+	menu_layer.add_child(win_screen)
 	
 func _show_credits() -> void:
 	var credits: Node = load("res://ui/screens/credit-screen/credit_screen.tscn").instantiate()
@@ -126,6 +125,7 @@ func _show_credits() -> void:
 	menu_layer.add_child(credits)
 	
 func _show_title_screen() -> void:
+	print("Show title")
 	InputManager.set_is_in_game(false)
 	var title_screen: Node = load("res://ui/screens/title-screen/title_screen.tscn").instantiate()
 	if not OS.has_feature("web"):

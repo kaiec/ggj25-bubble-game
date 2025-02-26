@@ -4,6 +4,6 @@
 [ext_resource type="Script" path="res://bubble/bubble.gd" id="2_ovfnn"]
 
 [node name="Bubble" instance=ExtResource("1_81tts")]
-modulate = Color(0.18815, 0.453265, 0.786797, 1)
+modulate = Color(0.188, 0.453, 1.2, 1)
 script = ExtResource("2_ovfnn")
 class_type = "Bubble"
