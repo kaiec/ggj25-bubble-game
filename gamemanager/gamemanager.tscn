@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgu0vbr50x7di"]
+[gd_scene load_steps=15 format=3 uid="uid://cgu0vbr50x7di"]
 
 [ext_resource type="Script" path="res://gamemanager/gamemanager.gd" id="1_htktm"]
 [ext_resource type="Texture2D" uid="uid://drbgduhudf0u7" path="res://bubble/assets/Starsetcolorful.png" id="2_7834v"]
 [ext_resource type="PackedScene" uid="uid://bilai15byqef2" path="res://ui/screens/pause-menu/pause_menu.tscn" id="2_b2lg8"]
 [ext_resource type="Texture2D" uid="uid://bc18q8uq3ov86" path="res://bubble/assets/BackgroundGrayscale.jpeg" id="2_i8bs5"]
 [ext_resource type="Environment" uid="uid://bhb4ckqipjvu3" path="res://other/main_environment.tres" id="2_v1n10"]
+[ext_resource type="Texture2D" uid="uid://cnusruo8wv5u4" path="res://bubble/assets/background-processed.png" id="3_7csbn"]
 [ext_resource type="Shader" path="res://gamemanager/frosted-ice.gdshader" id="3_7nklv"]
 [ext_resource type="Texture2D" uid="uid://dbgthsehgnhba" path="res://bubble/assets/images/grid.png" id="6_c62jp"]
 [ext_resource type="PackedScene" uid="uid://ddc3qfst7mbgc" path="res://ui/screens/title-screen/title_screen.tscn" id="6_pscip"]
@@ -38,7 +39,12 @@ level_location = "res://levels/new_levels/%s_%s.tscn"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_v1n10")
 
+[node name="Background-processed" type="Sprite2D" parent="."]
+texture = ExtResource("3_7csbn")
+centered = false
+
 [node name="Starsetcolorful" type="Sprite2D" parent="."]
+visible = false
 use_parent_material = true
 position = Vector2(-474, -269)
 scale = Vector2(1.25254, 1.25254)
@@ -55,6 +61,8 @@ texture = ExtResource("2_i8bs5")
 region_rect = Rect2(0, 0, 6400, 3600)
 
 [node name="FrostedGlasShader" type="ColorRect" parent="."]
+process_mode = 4
+visible = false
 material = SubResource("ShaderMaterial_jd371")
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 40.0
@@ -62,6 +70,7 @@ offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
 [node name="Grid" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1.3, 0.23, 1, 0.524)
 texture = ExtResource("6_c62jp")
 centered = false
