@@ -8,6 +8,8 @@ const SPRITESHEET_1 = preload("res://bubble/assets/atom/render/spritesheet-1.png
 const SPRITESHEET_2 = preload("res://bubble/assets/atom/render/spritesheet-2.png")
 const SPRITESHEET_3 = preload("res://bubble/assets/atom/render/spritesheet-3.png")
 
+const ATOM_BURST = preload("res://bubble/assets/atom/atom-burst.png")
+
 const spritesheets = [SPRITESHEET_1, SPRITESHEET_2, SPRITESHEET_3]
 @onready var animation_player: AnimationPlayer = $Sprite/AnimationPlayer
 
@@ -62,11 +64,11 @@ func spawn_animation():
 	if Engine.is_editor_hint(): return
 	
 	#print("Spawn animation start: ", self)
-	play_inflate_sound()
+	# play_inflate_sound()
 	scale = Vector2(0,0)
 	show()
-	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT_IN)
-	tween.tween_property(self, "scale", Vector2(1,1), animation_time)
+	var tween = create_tween().set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(self, "scale", Vector2(1,1), 0.2)
 	await tween.finished
 	#print("Spawn animation finished: ", self)
 	
@@ -76,11 +78,21 @@ func burst():
 	if bursting:
 		return
 	bursting = true
+	var target_scale = Vector2(2,2)
+	var burst_time = 0.2
+	if is_in_group("goal"):
+		target_scale = Vector2(4,4)
+		burst_time = 0.4
 	remove_from_group("goal")
+	$Sprite.texture = ATOM_BURST
+	$Sprite.hframes = 1
+	$Sprite/AnimationPlayer.stop()
+	$Sprite.frame = 0
 	var tween = create_tween().set_ease(Tween.EASE_OUT).set_parallel()
-	tween.tween_property(sprite, "scale", Vector2(2,2), animation_time)
-	tween.tween_property(sprite, "modulate:a", 0.5, animation_time)
-	await Co.await_all([tween.finished, play_pop_sound])
+	tween.tween_property(sprite, "scale", target_scale, burst_time)
+	tween.tween_property(sprite, "modulate:a", 0, burst_time)
+	await tween.finished
+	# await Co.await_all([tween.finished, play_pop_sound])
 	hide()
 
 
