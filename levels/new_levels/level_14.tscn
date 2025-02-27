@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=4 uid="uid://cyftnj6dowl16"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_84w11"]
+[ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_bbc33"]
+[ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_c8mvq"]
+[ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="4_24rmc"]
+[ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_tliin"]
+[ext_resource type="PackedScene" uid="uid://de5gcm2mubx77" path="res://bubble/game_objects/diagonal_bubble.tscn" id="6_hbfv1"]
+[ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="7_vnaao"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_84w11")
+max_clicks = 7
+
+[node name="Area" type="TileMapLayer" parent="."]
+position = Vector2(250, -50)
+tile_map_data = PackedByteArray("AAACAAUAAAABAAAAAAACAAYAAAABAAAAAAACAAcAAAABAAAAAAAGAAcAAAABAAAAAAAEAAcAAAABAAAAAAAIAAYAAAABAAAAAAAFAAQAAAABAAAAAAAEAAMAAAABAAAAAAADAAQAAAABAAAAAAAGAAUAAAABAAAAAAADAAYAAAABAAAAAAAHAAYAAAABAAAAAAACAAgAAAABAAAAAAAFAAgAAAABAAAAAAABAAUAAAABAAAAAAACAAkAAAABAAAAAAABAAkAAAABAAAAAAAAAAUAAAABAAAAAAD//wUAAAABAAAAAAAAAAkAAAABAAAAAAD//wYAAAABAAAAAAD//wcAAAABAAAAAAD//wgAAAABAAAAAAD//wkAAAABAAAAAAAJAAYAAAABAAAAAAAHAAMAAAABAAAAAAAHAAQAAAABAAAAAAAHAAUAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAABAAAAAAAJAAUAAAABAAAAAAAKAAQAAAABAAAAAAA=")
+tile_set = ExtResource("2_bbc33")
+
+[node name="GUI" parent="." instance=ExtResource("3_c8mvq")]
+
+[node name="BubbleEngine" parent="." node_paths=PackedStringArray("area") instance=ExtResource("4_24rmc")]
+unique_name_in_owner = true
+visible = false
+area = NodePath("../Area")
+
+[node name="Bubbles" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(250, -50)
+
+[node name="BadBubble" parent="Bubbles" instance=ExtResource("5_tliin")]
+position = Vector2(1050, 450)
+size = 3
+
+[node name="Bubble" parent="Bubbles" instance=ExtResource("7_vnaao")]
+position = Vector2(750, 350)
+size = 3
+
+[node name="Bubble2" parent="Bubbles" instance=ExtResource("7_vnaao")]
+position = Vector2(950, 650)
+size = 3
+
+[node name="DiagonalBubble" parent="Bubbles" instance=ExtResource("6_hbfv1")]
+position = Vector2(450, 350)
+size = 3
+
+[node name="DiagonalBubble2" parent="Bubbles" instance=ExtResource("6_hbfv1")]
+position = Vector2(550, 850)
+size = 3
+
+[node name="Bubble3" parent="Bubbles" instance=ExtResource("7_vnaao")]
+position = Vector2(-50, 550)
+size = 3
+
+[node name="Bubble4" parent="Bubbles" instance=ExtResource("7_vnaao")]
+position = Vector2(250, 950)
+size = 3
+
+[node name="Bubble5" parent="Bubbles" instance=ExtResource("7_vnaao")]
+position = Vector2(-50, 950)
+size = 5

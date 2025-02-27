@@ -33,7 +33,7 @@ shader_parameter/warp_texture = SubResource("NoiseTexture2D_t3lxh")
 process_mode = 3
 light_mask = 0
 script = ExtResource("1_htktm")
-max_level = 11
+max_level = 15
 level_location = "res://levels/new_levels/%s_%s.tscn"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

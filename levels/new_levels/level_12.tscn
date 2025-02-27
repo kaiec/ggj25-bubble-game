@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=4 uid="uid://darg0e6bytj4t"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_xy4di"]
+[ext_resource type="TileSet" uid="uid://cao5qi35xnsxu" path="res://bubble/tiles.tres" id="2_oaee8"]
+[ext_resource type="PackedScene" uid="uid://ckmaf8g03oxh" path="res://bubble/gui.tscn" id="3_35yt4"]
+[ext_resource type="PackedScene" uid="uid://cx0wgckga1wfc" path="res://bubble/bubble_engine.tscn" id="4_5afhq"]
+[ext_resource type="PackedScene" uid="uid://bqjvrwyyltsen" path="res://bubble/game_objects/bad_bubble.tscn" id="5_dy6er"]
+[ext_resource type="PackedScene" uid="uid://cbm74kal33eq3" path="res://bubble/game_objects/basic_bubble.tscn" id="6_yst53"]
+[ext_resource type="PackedScene" uid="uid://cjt4tsttw2c5r" path="res://bubble/game_objects/bubble.tscn" id="7_2252o"]
+
+[node name="Level" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_xy4di")
+max_clicks = 3
+
+[node name="Area" type="TileMapLayer" parent="."]
+position = Vector2(250, -50)
+tile_map_data = PackedByteArray("AAACAAUAAAABAAAAAAACAAYAAAABAAAAAAACAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAHAAMAAAABAAAAAAAIAAQAAAABAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAADAAcAAAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAJAAgAAAABAAAAAAAIAAMAAAABAAAAAAACAAMAAAABAAAAAAACAAQAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAA=")
+tile_set = ExtResource("2_oaee8")
+
+[node name="GUI" parent="." instance=ExtResource("3_35yt4")]
+
+[node name="BubbleEngine" parent="." node_paths=PackedStringArray("area") instance=ExtResource("4_5afhq")]
+unique_name_in_owner = true
+area = NodePath("../Area")
+
+[node name="Bubbles" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(250, -50)
+
+[node name="BadBubble" parent="Bubbles" instance=ExtResource("5_dy6er")]
+position = Vector2(950, 850)
+size = 3
+
+[node name="BasicBubble" parent="Bubbles" instance=ExtResource("6_yst53")]
+position = Vector2(850, 350)
+size = 3
+
+[node name="BasicBubble2" parent="Bubbles" instance=ExtResource("6_yst53")]
+position = Vector2(250, 750)
+size = 3
+
+[node name="Bubble" parent="Bubbles" instance=ExtResource("7_2252o")]
+position = Vector2(250, 350)
+size = 3
