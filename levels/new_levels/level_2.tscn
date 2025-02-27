@@ -51,7 +51,7 @@ offset_bottom = 333.0
 rotation = -0.0970384
 theme = ExtResource("7_f3ea7")
 theme_override_font_sizes/font_size = 40
-text = "Some Atoms emit 
-Electrons when 
+text = "Some atoms emit 
+electrons when 
 they burst (they glow!)!"
 horizontal_alignment = 1
