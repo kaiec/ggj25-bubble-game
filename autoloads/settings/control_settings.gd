@@ -11,20 +11,10 @@ static func create_action_setting(action: String, label: String) -> void:
 
 	var setting_key = "action_map_" + action
 
-	Settings.add_setting(setting_key, Settings.Setting.new(label,
-														Settings.SettingCategory.CONTROLS,
-														Settings.SettingType.INPUT_BINDING,
-														events,
-														{"action": action},
-														set_input_events.bind(action)))	
+	
 	
 static func _register_settings() -> void:
-	Settings.add_setting("mouse_sensitivity", Settings.Setting.new("Mouse Sensitivity",
-																	Settings.SettingCategory.CONTROLS,
-																	Settings.SettingType.FLOAT,
-																	1.0,
-																	{"min": 0.1, "max": 1.9, "step": 0}))
-	Settings.add_section("section_controls_key_bindings", "Key Bindings", Settings.SettingCategory.CONTROLS)
+	
 	# Insert you remappable actions here
 	create_action_setting("move_up", "Move Forward")
 	create_action_setting("move_down", "Move Backward")
