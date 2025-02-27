@@ -101,7 +101,6 @@ layout_mode = 2
 [node name="Forest" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_nw0f5")
 autoplay = true
-stream_paused = true
 bus = &"Music"
 
 [connection signal="continue_btn_pressed" from="MenuLayer/PauseMenu" to="." method="resume"]
