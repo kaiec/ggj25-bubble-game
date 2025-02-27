@@ -1,15 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://g2g8hydsgxid"]
+[gd_scene load_steps=5 format=3 uid="uid://g2g8hydsgxid"]
 
 [ext_resource type="Theme" uid="uid://hheneshfv1b2" path="res://ui/themes/your_theme.tres" id="1_ax6c2"]
 [ext_resource type="Script" path="res://ui/screens/win-screen/win_screen.gd" id="1_lgw0b"]
-[ext_resource type="FontFile" uid="uid://cbt6png2tnpyv" path="res://bubble/assets/fonts/PressStart2P-Regular.ttf" id="3_akqyy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rbmgw"]
-font = ExtResource("3_akqyy")
 font_size = 77
 
 [sub_resource type="LabelSettings" id="LabelSettings_rvyxm"]
-font = ExtResource("3_akqyy")
 font_size = 25
 
 [node name="WinScreen" type="MarginContainer"]

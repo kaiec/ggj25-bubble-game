@@ -19,8 +19,8 @@ func _on_texture_button_pressed() -> void:
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
-	var time : float = float(Time.get_ticks_msec()) / 200
-	position.y = original_pos.y + 2 * sin(time + anim_offset)
+	# var time : float = float(Time.get_ticks_msec()) / 200
+	# position.y = original_pos.y + 2 * sin(time + anim_offset)
 
 
 func set_remaining_bubbles(amount : int):

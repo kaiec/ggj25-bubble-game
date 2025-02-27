@@ -34,8 +34,8 @@ offset_top = 49.0
 offset_right = 293.0
 offset_bottom = 84.0
 theme = ExtResource("6_cm7rx")
-text = "Click Bubbles
-to inflate them"
+text = "Click Atoms to add 
+Electrons to them"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -44,4 +44,4 @@ offset_top = 272.0
 offset_right = 304.0
 offset_bottom = 295.0
 theme = ExtResource("6_cm7rx")
-text = "until they pop!"
+text = "until they burst!"

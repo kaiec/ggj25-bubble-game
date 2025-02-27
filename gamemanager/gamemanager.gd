@@ -49,7 +49,8 @@ func _ready() -> void:
 	
 func _start_game() -> void:
 	level = 0
-	_show_controls()
+	# _show_controls()
+	_next_level()
 
 #region Pausing
 
@@ -57,7 +58,7 @@ func pause():
 	InputManager.set_is_paused(true)
 	if not OS.has_feature("web"):
 		pause_menu.show_quit_button()
-	pause_menu.move_to_front()
+	menu_layer.move_to_front()
 	pause_menu.show()
 	get_tree().paused = true
 	

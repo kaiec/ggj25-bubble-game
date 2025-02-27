@@ -120,6 +120,6 @@ func play_inflate_sound() -> AudioStreamPlayer:
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
-	var pos = engine.area.map_to_local(cell)
-	var time : float = float(Time.get_ticks_msec()) / 200
-	position.y = pos.y + 2 * sin(time + anim_offset)
+	# var pos = engine.area.map_to_local(cell)
+	# var time : float = float(Time.get_ticks_msec()) / 200
+	# position.y = pos.y + 2 * sin(time + anim_offset)

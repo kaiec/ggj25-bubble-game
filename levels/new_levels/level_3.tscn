@@ -51,6 +51,6 @@ rotation = -0.203001
 theme = ExtResource("7_x4cfg")
 theme_override_font_sizes/font_size = 40
 text = "You have limited
-clicks to pop all
-the red bubbles!"
+electrons to burst
+all the red bubbles!"
 horizontal_alignment = 1
