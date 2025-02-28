@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="buttons.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0752595"
+     inkscape:cx="256.21722"
+     inkscape:cy="561.25986"
+     inkscape:window-width="2520"
+     inkscape:window-height="1416"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="0.5"
+       markerHeight="0.5"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:none;stroke:#ffffff;stroke-width:5.29167;stroke-dasharray:none"
+       id="path1"
+       cx="-88.460236"
+       cy="94.798515"
+       r="27.190138"
+       inkscape:export-filename="pause-button.png"
+       inkscape:export-xdpi="54.484562"
+       inkscape:export-ydpi="54.484562" />
+    <text
+       xml:space="preserve"
+       style="font-size:52.9167px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#ffffff;stroke-width:5.29167;stroke-dasharray:none"
+       x="-102.74773"
+       y="112.49915"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52.9167px;font-family:'Tilt Neon';-inkscape-font-specification:'Tilt Neon';fill:#ffffff;stroke:none;stroke-width:5.29167"
+         x="-102.74773"
+         y="112.49915">P</tspan></text>
+    <circle
+       style="fill:none;stroke:#ffffff;stroke-width:5.29167;stroke-dasharray:none"
+       id="path1-5"
+       cx="-58.799442"
+       cy="201.55055"
+       r="27.190138"
+       inkscape:export-filename="reset-button.png"
+       inkscape:export-xdpi="54.484562"
+       inkscape:export-ydpi="54.484562" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:5.29167;stroke-linecap:round;stroke-dasharray:none;marker-end:url(#RoundedArrow)"
+       id="path2"
+       sodipodi:cx="-104.08533"
+       sodipodi:cy="150.59155"
+       sodipodi:expansion="1.5"
+       sodipodi:revolution="1.6"
+       sodipodi:radius="22.294325"
+       sodipodi:argument="-17.931091"
+       sodipodi:t0="0.27000001"
+       d="m -106.84331,149.11619 c -0.0393,-2.88219 3.18629,-4.38439 5.68449,-3.99534 4.656898,0.72523 6.848527,5.92283 5.81307,10.14586 -1.637227,6.67731 -9.20514,9.67371 -15.41684,7.80709 -8.92492,-2.68194 -12.81881,-12.9528 -9.96763,-21.38628 2.392,-7.0753 8.83082,-12.11846 16.10959,-13.38386"
+       transform="matrix(-1.0032953,-0.23046383,0.17741354,-0.77234749,-190.37087,288.43944)" />
+  </g>
+</svg>
