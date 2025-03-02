@@ -13,7 +13,7 @@ func _ready() -> void:
 	class_type = "Projectile"
 	animation_timer = Timer.new()
 	add_child(animation_timer)
-	$Sprite.texture = preload("res://bubble/assets/atom/electron100.png")
+	$Sprite.texture = preload("res://bubble/assets/electron100.png")
 	$Sprite.hframes = 1
 	$Sprite/AnimationPlayer.stop()
 	

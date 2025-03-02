@@ -4,11 +4,11 @@ extends Node2D
 
 @export var class_type = "BasicBubble"
 
-const SPRITESHEET_1 = preload("res://bubble/assets/atom/render/spritesheet-1.png")
-const SPRITESHEET_2 = preload("res://bubble/assets/atom/render/spritesheet-2.png")
-const SPRITESHEET_3 = preload("res://bubble/assets/atom/render/spritesheet-3.png")
+const SPRITESHEET_1 = preload("res://bubble/assets/spritesheet-1.png")
+const SPRITESHEET_2 = preload("res://bubble/assets/spritesheet-2.png")
+const SPRITESHEET_3 = preload("res://bubble/assets/spritesheet-3.png")
 
-const ATOM_BURST = preload("res://bubble/assets/atom/atom-burst.png")
+const ATOM_BURST = preload("res://bubble/assets/atom-burst.png")
 
 const spritesheets = [SPRITESHEET_1, SPRITESHEET_2, SPRITESHEET_3]
 @onready var animation_player: AnimationPlayer = $Sprite/AnimationPlayer

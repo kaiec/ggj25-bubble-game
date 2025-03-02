@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbm74kal33eq3"]
 
 [ext_resource type="Script" path="res://bubble/basic_bubble.gd" id="1_fownq"]
-[ext_resource type="Texture2D" uid="uid://cqnjy16lf4g7b" path="res://bubble/assets/atom/render/spritesheet-1.png" id="2_68jqc"]
+[ext_resource type="Texture2D" uid="uid://cqnjy16lf4g7b" path="res://bubble/assets/spritesheet-1.png" id="2_68jqc"]
 [ext_resource type="AudioStream" uid="uid://2s0keosjfx0w" path="res://bubble/assets/sfx/NenadSimic - Muffled Distant Explosion.wav" id="3_nmp7p"]
 [ext_resource type="AudioStream" uid="uid://cy1i6oujamyxc" path="res://bubble/assets/sfx/laserfire01.wav" id="13_03vnv"]
 
